@@ -18,9 +18,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-    void Update()
+    void FixedUpdate()
     {
-        Movement();
+        //Movement();
     }
     void Movement()
     {
@@ -33,10 +33,11 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = newPos - curPos;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, colliderDistance, hitMask);
 
-        rb.MovePosition(newPos);
+        rb.velocity = newPos;
     }
     void OnMove(InputValue value)
     {
-        movement = value.Get<Vector2>();
+        //movement = value.Get<Vector2>();
+        rb.velocity = value.Get<Vector2>() * movementSpeed;
     }
 }

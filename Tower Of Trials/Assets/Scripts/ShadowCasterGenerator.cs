@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Tilemaps;
@@ -35,7 +36,6 @@ public class ShadowCasterGenerator : MonoBehaviour
             {
                 Vector2[] pathVertices = new Vector2[tilemapColliders[i].GetPathPointCount(j)];
                 tilemapColliders[i].GetPath(j, pathVertices);
-                print("test");
                 shadowCasterComponent = tilemapColliders[i].gameObject.AddComponent<ShadowCaster2D>();
 
                 shadowCasterComponent.useRendererSilhouette = rendererSilhouette;
@@ -59,11 +59,14 @@ public class ShadowCasterGenerator : MonoBehaviour
     {
         tilemapColliders.Clear();
 
-        Transform obstacles = grid.Find("Obstacles");
+        Transform walls = grid.Find("Walls");
 
-        for (int i = 0; i < obstacles.childCount; i++)
+        for (int i = 0; i < walls.childCount; i++)
         {
-            tilemapColliders.Add(obstacles.GetChild(i).GetComponent<CompositeCollider2D>());
+            if (walls.GetChild(i).GetComponent<ShadowCaster2D>() is ShadowCaster2D shadow)
+                DestroyImmediate(shadow);
+
+            tilemapColliders.Add(walls.GetChild(i).GetComponent<CompositeCollider2D>());
         }
     }
 }
