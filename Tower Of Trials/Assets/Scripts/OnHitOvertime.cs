@@ -1,13 +1,17 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEditor;
+using UnityEngine;
 
 [CreateAssetMenu(menuName = "Tower Of Trials/OnHit/HitDamage")]
 public class OnHitOvertime : OnHitBase
 {
-    public int amountOfTicks;
+    [SerializeField] private int amountOfTicks;
+    [SerializeField] private int damage;
+    [SerializeField] private DamageType type;
 
     public override void OnHit(Health _hitee)
     {
-        // add poison damage to tick manager
-        
+        // add fire damage to tick manager
+        _hitee.ApplyNewDamageOverTime(new DamageOverTime(amountOfTicks, damage, type));
     }
 }

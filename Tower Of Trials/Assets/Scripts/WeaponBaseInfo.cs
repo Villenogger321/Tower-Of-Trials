@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,12 +7,13 @@ using UnityEngine;
 public class WeaponBaseInfo : ScriptableObject
 {
     public DamageType DmgType = DamageType.physical;
+    public List<OnHitBase> onHit;
     public int Damage;
     public float FireRate;
     public float BulletSpeed;
     public float Lifetime;
 
-    public GameObject Projectile;
+    public Projectile Projectile;
     public Sprite ProjectileSprite;
     public Sprite WeaponSprite;
 }
@@ -23,21 +25,4 @@ public enum DamageType
     fire = 4,
     poison = 8,
     explosive = 16
-}
-
-public class Test : MonoBehaviour
-{
-    public Action onHit;
-    void Hej(Action _subscriber)
-    {
-    }
-    private void Start()
-    {
-        onHit += Subscribe;
-        onHit?.Invoke();
-    }
-    void Subscribe()
-    {
-
-    }
 }

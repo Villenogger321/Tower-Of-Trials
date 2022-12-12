@@ -36,7 +36,11 @@ public class ShadowCasterGenerator : MonoBehaviour
             {
                 Vector2[] pathVertices = new Vector2[tilemapColliders[i].GetPathPointCount(j)];
                 tilemapColliders[i].GetPath(j, pathVertices);
-                shadowCasterComponent = tilemapColliders[i].gameObject.AddComponent<ShadowCaster2D>();
+
+                if (tilemapColliders[i].GetComponent<ShadowCaster2D>() is ShadowCaster2D _tempShadowCasterComponent)
+                    shadowCasterComponent = _tempShadowCasterComponent;
+                else
+                    shadowCasterComponent = tilemapColliders[i].gameObject.AddComponent<ShadowCaster2D>();
 
                 shadowCasterComponent.useRendererSilhouette = rendererSilhouette;
                 shadowCasterComponent.castsShadows = castShadows;
