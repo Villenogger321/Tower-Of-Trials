@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Obstacle
-  - 
+  - Projectile
   - 
   - 
   - 
@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Layer 1
+  - name: Characters
     uniqueID: 2317916767
+    locked: 0
+  - name: Projectiles
+    uniqueID: 3880406615
+    locked: 0
+  - name: UI
+    uniqueID: 873299129
     locked: 0
