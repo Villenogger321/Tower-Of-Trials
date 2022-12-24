@@ -15,7 +15,53 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Test.bank
   Name: Test
   StudioPath: bank:/Test
-  lastModified: 638067496837421432
+  lastModified: 638074886958583326
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-5604161883699375601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/echo/Tutorial/Music/Music
+  m_EditorClassIdentifier: 
+  Path: event:/echo/Tutorial/Music/Music
+  Guid:
+    Data1: -582901097
+    Data2: 1196993438
+    Data3: 1667510662
+    Data4: -1125136832
+  Banks:
+  - {fileID: -3219708900538043853}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -200377753508022478}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 263029
+--- !u!114 &-3219708900538043853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODBanks/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638074887014832238
   FileSizes: []
   Exists: 1
 --- !u!114 &-1402830012729558296
@@ -45,6 +91,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 260362
+--- !u!114 &-200377753508022478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/progress
+  m_EditorClassIdentifier: 
+  Name: progress
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3493715186
+    data2: 2421877584
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,14 +131,16 @@ MonoBehaviour:
   - {fileID: 7343210120910295523}
   - {fileID: 4581100592221126606}
   - {fileID: -8233344413236559508}
+  - {fileID: -3219708900538043853}
   EditorEvents:
   - {fileID: -1402830012729558296}
+  - {fileID: -5604161883699375601}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4581100592221126606}
   StringsBanks:
   - {fileID: 7343210120910295523}
-  cacheTime: 638067496837421432
+  cacheTime: 638074887014832238
   cacheVersion: 131601
 --- !u!114 &4581100592221126606
 MonoBehaviour:
@@ -85,7 +157,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638067496837311049
+  lastModified: 638074886902121897
   FileSizes: []
   Exists: 1
 --- !u!114 &7343210120910295523
@@ -103,8 +175,8 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638067496837316787
+  lastModified: 638074886902127601
   FileSizes:
   - Name: 
-    Value: 810
+    Value: 976
   Exists: 1
