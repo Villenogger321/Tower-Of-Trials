@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Health : MonoBehaviour
     public Action onDeath;
     public Action<int, DamageType> onDamage;
     private List<DamageOverTime> damageOverTimeList = new();
+
+    public HealthBar healthBar;                                                       //irina Healthbar code
+
     public void TakeDamage(int _damage, DamageType _type = DamageType.physical)
     {
         health -= _damage;
@@ -42,6 +46,8 @@ public class Health : MonoBehaviour
         {
             onDamage?.Invoke(health / maxHealth, item.Type);
         }
+
+        healthBar.SetHealth(health);                                                  //irina Healthbar code
     }
     [ContextMenu("damage")]
     private void TempTest()
@@ -50,8 +56,10 @@ public class Health : MonoBehaviour
     }
     private void Start()
     {
-        health = maxHealth;
+        health = maxHealth;    
         TickManager.Subscribe(OnTick);
+
+        healthBar.SetMaxHealth(maxHealth);                                             //irina Healthbar code
     }
     private void OnTick()
     {
