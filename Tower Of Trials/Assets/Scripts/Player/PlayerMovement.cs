@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Movement();
-        Debug.Log(movement);
     }
     void Movement()
     {
