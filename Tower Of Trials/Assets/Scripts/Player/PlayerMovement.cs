@@ -13,14 +13,24 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     Rigidbody2D rb;
 
+    [Header("FMOD")]
+    private FMOD.Studio.EventInstance footstepInstance; //FMOD instance for calling the Footstep event
+
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        #region FMOD
+        //FMOD creating an instance variable for the event that can be called
+        footstepInstance = FMODUnity.RuntimeManager.CreateInstance("event:/echo/SFX/Footsteps");
+        #endregion
     }
     void Update()
     {
         Movement();
+        Debug.Log(movement);
     }
     void Movement()
     {
@@ -37,10 +47,26 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, colliderDistance, hitMask);
 
         rb.velocity = newPos;*/
+
     }
     void OnMove(InputValue value)
     {
         movement = value.Get<Vector2>();
         //rb.velocity = value.Get<Vector2>() * movementSpeed;
+
+        #region FMOD
+        //trigger FMOD footsteps sound loop
+
+        if(movement.y != 0 || movement.x != 0)//if moving
+        {
+            footstepInstance.start();
+        }
+        if(movement.x == 0 && movement.y == 0)//if not moving
+        {
+            footstepInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+
+        #endregion
+
     }
 }
