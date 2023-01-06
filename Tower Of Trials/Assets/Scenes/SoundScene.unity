@@ -2076,6 +2076,13 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 64
+  footstepEvent:
+    Guid:
+      Data1: -1441411843
+      Data2: 1294782127
+      Data3: 1656111016
+      Data4: -1045400414
+    Path: event:/echo/SFX/Footsteps
 --- !u!114 &1064431776
 MonoBehaviour:
   m_ObjectHideFlags: 0
