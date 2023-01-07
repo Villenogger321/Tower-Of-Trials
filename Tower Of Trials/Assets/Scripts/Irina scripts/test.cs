@@ -9,6 +9,8 @@ public class test : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public int damageN = 1;
+    public int healN = 1;
+    private bool dead = false;
 
     public HealthBar healthBar;
     public GameObject blood;
@@ -25,16 +27,33 @@ public class test : MonoBehaviour
         {
             TakeDamage(damageN);
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            TakeHeal(healN);
+        }
         
         if (currentHealth == 0)
         {
             blood.SetActive(false);
+            dead = true;
+        }
+
+        if (dead == true)
+        {
+            this.enabled = false;
         }
     }
 
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+
+    void TakeHeal(int heal)
+    {
+        currentHealth += heal;
         healthBar.SetHealth(currentHealth);
     }
 
