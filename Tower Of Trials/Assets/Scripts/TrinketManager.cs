@@ -12,8 +12,7 @@ public class TrinketManager : MonoBehaviour
 
     [SerializeField] TextAsset firstNameList, middleNameList, lastNameList;
     [SerializeField] string[] firstName, middleName, lastName;
-    public float floor = 1;
-    public TrinketRarity rarity;
+    [SerializeField] TrinketInventory inventory;
 
     void Start()
     {
@@ -27,23 +26,49 @@ public class TrinketManager : MonoBehaviour
     void GenerateTrinket()
     {
         Trinket trinket = new Trinket();
-
         trinket.name = generateName();
-        print(trinket.name);
+        trinket.rarity = TrinketRarityGenerator();
+        trinket.trinketStats.Add(TrinketStatMath(trinket));
+        inventory.EquipTrinket(trinket, 0);     // Very temporary, adding trinket to 1st slot
     }
-
-    [ContextMenu("math")]
-    void TrinketStatMath()
+    TrinketStat TrinketStatMath(Trinket _trinket)
     {
-        Trinket trinket = new Trinket();
-        TrinketStatInfo info = trinket.GetRarityInfo(rarity);
+        TrinketStat trinketStat = new TrinketStat();
+        TrinketStatInfo info = _trinket.GetRarityInfo(_trinket.rarity);
+        // first choose stat type(s)
+        trinketStat.type = (TrinketStatsType)Random.Range(0, 5);
 
-        for (int i = 0; i < 10; i++)
-        {
-            float temp = ((info.floorMultiplier * floor)) + (Random.Range(info.healthRange.x, info.healthRange.y));
-            print((int)temp);
 
-        }
+        // calculate statmodifier depending on chosen stat
+        Vector2 newModifierRange = ModifierRange(trinketStat.type, info);
+        
+        trinketStat.statModifier = info.floorMultiplier * LevelManager.Instance.GetFloor()
+                + Random.Range(newModifierRange.x, newModifierRange.y);
+
+        return trinketStat;
+    }
+    Vector2 ModifierRange(TrinketStatsType _type, TrinketStatInfo _info)
+    {
+        if (_type == TrinketStatsType.health)
+            return _info.healthRange;
+        if (_type == TrinketStatsType.damage)
+            return _info.damageRange;
+        if (_type == TrinketStatsType.attackSpeed)
+            return _info.attackSpeedRange;
+        if (_type == TrinketStatsType.movementSpeed)
+            return _info.movementSpeedRange;
+        else
+            return _info.projectileSpeedRange;
+    }
+    TrinketRarity TrinketRarityGenerator()
+    {
+        float rand = Random.Range(1, 101);
+        if (rand <= 15)     // epic trinket
+            return TrinketRarity.epic;
+        if (rand <= 40)     // rare trinket
+            return TrinketRarity.rare;
+        else                // common trinket
+            return TrinketRarity.common;
     }
     String generateName()
     {
@@ -60,10 +85,12 @@ public class TrinketManager : MonoBehaviour
         lastName = lastNameList.text.Split('\n');
     }
 }
+[Serializable]
 public class Trinket
 {
     public string name;
     public TrinketRarity rarity;
+    public List<TrinketStat> trinketStats = new List<TrinketStat>();
 
 
     public TrinketStatInfo GetRarityInfo(TrinketRarity _rarity)
@@ -105,6 +132,13 @@ public class Trinket
         };
     }
 }
+
+[Serializable]
+public class TrinketStat
+{
+    public TrinketStatsType type;
+    public float statModifier;
+}
 public struct TrinketStatInfo
 {
     public Vector2 healthRange;
@@ -130,4 +164,18 @@ public enum TrinketRarity
     rare,
     epic,
     legendary
+}
+public enum TrinketStatsType
+{
+    health,
+    damage,
+    attackSpeed,
+    movementSpeed,
+    projectileSpeed
+}
+
+[CreateAssetMenu(menuName = "Tower Of Trials/TrinketUnique")]
+public class TrinketUniqueInfo : ScriptableObject
+{
+    
 }

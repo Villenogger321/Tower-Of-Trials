@@ -31,6 +31,51 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TrinketInteraction1",
+                    "type": "Button",
+                    "id": "fe1609ab-96bb-434a-818f-28a5aff89842",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold(duration=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrinketInteraction2",
+                    "type": "Button",
+                    "id": "41b966c9-9313-4295-b4e3-bb34fa524786",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold(duration=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrinketInteraction3",
+                    "type": "Button",
+                    "id": "68921bbf-8735-480b-b4b2-ba63b9d1cdc3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold(duration=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrinketInteraction4",
+                    "type": "Button",
+                    "id": "09ea0126-c545-4ab9-b3fb-7c79126cb5fa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold(duration=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrinketInteraction5",
+                    "type": "Button",
+                    "id": "e701ac6e-c7c3-4bb7-b005-f18932669c17",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold(duration=1)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -251,6 +296,61 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d17f0e0a-4aa0-47fb-bbdb-0217d352e8d6",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TrinketInteraction1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "418d7774-637c-48d5-9e29-5602a86beda1",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TrinketInteraction2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7ea594a-53ff-47ec-b5ae-909b8c1b8ab5",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TrinketInteraction3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c2d20b8-98cc-4c30-80cc-3d087e48bdcf",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TrinketInteraction4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f197022-0cf6-4137-8fb7-8c40f6018fd3",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TrinketInteraction5",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

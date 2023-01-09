@@ -25,22 +25,13 @@ public class PlayerMovement : MonoBehaviour
     void Movement()
     {
         transform.position += movementSpeed * Time.deltaTime * (Vector3)movement;
-
-
-        /*Vector2 currentPos = rb.position;
-        Vector2 adjustedMovement = movement * movementSpeed;
-        Vector2 newPos = currentPos + adjustedMovement * Time.fixedDeltaTime;
-
-        Vector2 curPos = new Vector2(transform.position.x, transform.position.y);
-
-        Vector2 direction = newPos - curPos;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, colliderDistance, hitMask);
-
-        rb.velocity = newPos;*/
     }
     void OnMove(InputValue value)
     {
         movement = value.Get<Vector2>();
-        //rb.velocity = value.Get<Vector2>() * movementSpeed;
+
+        anim.SetFloat("Horizontal", movement.x);
+        anim.SetFloat("Vertical", movement.y);
+        anim.SetFloat("Speed", movement.sqrMagnitude);
     }
 }
