@@ -43,7 +43,11 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/ui.bank
   Name: ui
   StudioPath: bank:/ui
+<<<<<<< HEAD
   lastModified: 638089540480042370
+=======
+  lastModified: 638089525368134788
+>>>>>>> parent of 5b2fdae (revert)
   FileSizes: []
   Exists: 1
 --- !u!114 &-7844118593993165345
@@ -87,7 +91,11 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
+<<<<<<< HEAD
   lastModified: 638089540479432111
+=======
+  lastModified: 638089525363440099
+>>>>>>> parent of 5b2fdae (revert)
   FileSizes: []
   Exists: 1
 --- !u!114 &-6270735403090718413
@@ -105,7 +113,11 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/sfx.bank
   Name: sfx
   StudioPath: bank:/sfx
+<<<<<<< HEAD
   lastModified: 638089540480020120
+=======
+  lastModified: 638089525368121025
+>>>>>>> parent of 5b2fdae (revert)
   FileSizes: []
   Exists: 1
 --- !u!114 &-4910301239721684470
@@ -196,7 +208,11 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< HEAD
   lastModified: 638089540477912250
+=======
+  lastModified: 638089525292722882
+>>>>>>> parent of 5b2fdae (revert)
   FileSizes: []
   Exists: 1
 --- !u!114 &-2283908245742697394
@@ -322,7 +338,11 @@ MonoBehaviour:
   - {fileID: -3487695226702186915}
   StringsBanks:
   - {fileID: 4401647381223461350}
+<<<<<<< HEAD
   cacheTime: 638089540480042370
+=======
+  cacheTime: 638089525368134788
+>>>>>>> parent of 5b2fdae (revert)
   cacheVersion: 131601
 --- !u!114 &4043847769903313555
 MonoBehaviour:
@@ -367,7 +387,11 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< HEAD
   lastModified: 638089540477928698
+=======
+  lastModified: 638089525292733286
+>>>>>>> parent of 5b2fdae (revert)
   FileSizes:
   - Name: 
     Value: 1464
