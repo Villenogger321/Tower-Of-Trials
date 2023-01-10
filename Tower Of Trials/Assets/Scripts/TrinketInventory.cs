@@ -1,44 +1,99 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerStats))]
 public class TrinketInventory : MonoBehaviour
 {
+    [SerializeField] float pickupDistance = 1;
     [SerializeField] Trinket[] equippedTrinkets = new Trinket[5];
-    public Trinket tempTrinket = new Trinket();
+    [SerializeField] List<Transform> closeTrinkets = null;
+    [SerializeField] Transform closestTrinket = null;
+    [SerializeField] Transform trinketTooltip;
+    [SerializeField] Vector3 tooltipOffset;
+
     PlayerStats playerStats;
+    TrinketManager trinketManager;
     public void EquipTrinket(Trinket _trinket, int _slot)
     {
         UnequipTrinket(_slot);
         equippedTrinkets[_slot] = _trinket;
-
         playerStats.ApplyStats(_trinket.trinketStats);
         // despawn trinket in overworld
+        Destroy(closestTrinket.gameObject);
     }
     public void UnequipTrinket(int _slot)
     {
-        if (equippedTrinkets[_slot] == null)
+        if (equippedTrinkets[_slot].name == "" || equippedTrinkets[_slot].name == null)
             return;
 
+        Trinket selectedTrinket = equippedTrinkets[_slot];
+        
+        // spawn trinket in overworld
+        trinketManager.SpawnTrinket(new Vector2(transform.position.x,
+            transform.position.y + 0.75f), selectedTrinket);
+
+        // remove trinket stats from player & reset name
         playerStats.RemoveStats(equippedTrinkets[_slot].trinketStats);
         equippedTrinkets[_slot] = null;
-        // spawn trinket in overworld
     }
 
     void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
+        trinketManager = TrinketManager.instance;
     }
-
-    void Update()
+    void FixedUpdate()
     {
+        closeTrinkets.Clear();
+        Collider2D[] closeColliders = Physics2D.OverlapCircleAll(transform.position, pickupDistance);
+        foreach (Collider2D col in closeColliders)
+        {
+            if (col.CompareTag("Trinket"))
+                closeTrinkets.Add(col.transform);
+        }
+        closestTrinket = GetClosestTrinket();
+        TrinketTooltipPosition();
+    }
+    void TrinketTooltipPosition()
+    {
+        if (closestTrinket == null)
+        {
+            trinketTooltip.gameObject.SetActive(false);
+            return;
+        }
+        trinketTooltip.gameObject.SetActive(true);
+        trinketTooltip.position = closestTrinket.transform.position + tooltipOffset;
         
     }
+    Transform GetClosestTrinket()
+    {
+        Transform tMin = null;
+        float minDist = Mathf.Infinity;
+        Vector3 currentPos = transform.position;
+        foreach (Transform t in closeTrinkets)
+        {
+            float dist = Vector3.Distance(t.position, currentPos);
+            if (dist < minDist)
+            {
+                tMin = t;
+                minDist = dist;
+            }
+        }
+        return tMin;
+    }
+    void OnSpawnTrinket()
+    {
+        trinketManager.SpawnTrinket(GameObject.FindGameObjectWithTag("Player").transform.position);
+    }
+
     void AddNewTrinket(int _slot)
     {
-        EquipTrinket(tempTrinket, _slot);
-        // make sure trinket is available
+        if (closestTrinket != null)
+            EquipTrinket(closestTrinket.GetComponent<TrinketItem>().Trinket, _slot);
+        // make sure trinket is available to equip
     }
     void RemoveTrinket(int _slot)
     {

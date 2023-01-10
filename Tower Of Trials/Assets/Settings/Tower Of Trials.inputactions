@@ -38,7 +38,7 @@
                     "id": "fe1609ab-96bb-434a-818f-28a5aff89842",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap,Hold(duration=1)",
+                    "interactions": "Tap,Hold(duration=0.75)",
                     "initialStateCheck": false
                 },
                 {
@@ -47,7 +47,7 @@
                     "id": "41b966c9-9313-4295-b4e3-bb34fa524786",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap,Hold(duration=1)",
+                    "interactions": "Tap,Hold(duration=0.75)",
                     "initialStateCheck": false
                 },
                 {
@@ -56,7 +56,7 @@
                     "id": "68921bbf-8735-480b-b4b2-ba63b9d1cdc3",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap,Hold(duration=1)",
+                    "interactions": "Tap,Hold(duration=0.75)",
                     "initialStateCheck": false
                 },
                 {
@@ -65,7 +65,7 @@
                     "id": "09ea0126-c545-4ab9-b3fb-7c79126cb5fa",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap,Hold(duration=1)",
+                    "interactions": "Tap,Hold(duration=0.75)",
                     "initialStateCheck": false
                 },
                 {
@@ -74,7 +74,16 @@
                     "id": "e701ac6e-c7c3-4bb7-b005-f18932669c17",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap,Hold(duration=1)",
+                    "interactions": "Tap,Hold(duration=0.75)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SpawnTrinket",
+                    "type": "Button",
+                    "id": "7e89971d-2f8b-4d90-9cfa-d566c9e822e8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -351,6 +360,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "TrinketInteraction5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d6efc82-2c1a-4c8d-b52d-fc40acd17a27",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpawnTrinket",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -9,27 +9,48 @@ using Random = UnityEngine.Random;
 
 public class TrinketManager : MonoBehaviour
 {
-
     [SerializeField] TextAsset firstNameList, middleNameList, lastNameList;
     [SerializeField] string[] firstName, middleName, lastName;
     [SerializeField] TrinketInventory inventory;
+    [SerializeField] GameObject trinketGO;
+    [SerializeField] Transform trinketParent;
 
-    void Start()
+    public Sprite[] CommonInventoryTrinketSprite, CommonItemTrinketSprite;
+    public Sprite[] RareInventoryTrinketSprite, RareItemTrinketSprite;
+    public Sprite[] EpicInventoryTrinketSprite, EpicItemTrinketSprite;
+
+    public static TrinketManager instance;
+    void Awake()
     {
-        GenerateTrinket();
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
     }
-
-    void Update()
+    public void SpawnTrinket(Vector3 _position, Trinket _trinket = null)
     {
+        GameObject trinket = Instantiate(trinketGO, _position, Quaternion.identity, trinketParent);
+        TrinketItem trinketItem = trinket.GetComponent<TrinketItem>();
 
-    }
-    void GenerateTrinket()
+        if (_trinket == null)
+            trinketItem.Trinket = GenerateTrinket();
+        else
+            trinketItem.Trinket = _trinket;
+
+        trinket.GetComponent<SpriteRenderer>().sprite = trinketItem.Trinket.sprite;
+        trinket.name = trinketItem.Trinket.name;
+
+        if (trinket.GetComponent<Rigidbody2D>() is Rigidbody2D _rb)
+            _rb.AddForce(new Vector2(Random.Range(-60, 60), 100));
+    }   
+    public Trinket GenerateTrinket()
     {
         Trinket trinket = new Trinket();
         trinket.name = generateName();
         trinket.rarity = TrinketRarityGenerator();
+        trinket.sprite = TrinketSpriteGenerator(trinket.rarity);
         trinket.trinketStats.Add(TrinketStatMath(trinket));
-        inventory.EquipTrinket(trinket, 0);     // Very temporary, adding trinket to 1st slot
+        return trinket;
     }
     TrinketStat TrinketStatMath(Trinket _trinket)
     {
@@ -59,6 +80,19 @@ public class TrinketManager : MonoBehaviour
             return _info.movementSpeedRange;
         else
             return _info.projectileSpeedRange;
+    }
+    Sprite TrinketSpriteGenerator(TrinketRarity _rarity)
+    {
+        if (_rarity == TrinketRarity.common)
+            return CommonItemTrinketSprite[
+                Random.Range(0, CommonItemTrinketSprite.Length)];
+
+        if (_rarity == TrinketRarity.rare)
+            return RareItemTrinketSprite[
+                Random.Range(0, RareItemTrinketSprite.Length)];
+
+            return EpicItemTrinketSprite[
+                Random.Range(0, EpicItemTrinketSprite.Length)];
     }
     TrinketRarity TrinketRarityGenerator()
     {
@@ -90,11 +124,13 @@ public class Trinket
 {
     public string name;
     public TrinketRarity rarity;
+    public Sprite sprite;
     public List<TrinketStat> trinketStats = new List<TrinketStat>();
 
 
     public TrinketStatInfo GetRarityInfo(TrinketRarity _rarity)
     {
+#pragma warning disable CS8524
         return _rarity switch
         {
             TrinketRarity.common => new TrinketStatInfo(
@@ -130,6 +166,7 @@ public class Trinket
                 projectileSpeedRange : new Vector2(28, 36),
                      floorMultiplier : 0.8f)
         };
+#pragma warning restore CS8524 // The switch expression does not handle some values of its input type (it is not exhaustive) involving an unnamed enum value.
     }
 }
 
