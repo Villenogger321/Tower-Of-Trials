@@ -39,7 +39,6 @@ public class TrinketInventory : MonoBehaviour
         playerStats.RemoveStats(equippedTrinkets[_slot].trinketStats);
         equippedTrinkets[_slot] = null;
     }
-
     void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
@@ -56,6 +55,13 @@ public class TrinketInventory : MonoBehaviour
         }
         closestTrinket = GetClosestTrinket();
         TrinketTooltipPosition();
+    }
+    public Trinket GetTrinket(int _slot)
+    {
+        if (equippedTrinkets[_slot].name == "" || equippedTrinkets[_slot].name == null)
+            return null;
+
+        return equippedTrinkets[_slot];
     }
     void TrinketTooltipPosition()
     {

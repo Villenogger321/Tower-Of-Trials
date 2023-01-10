@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -50,8 +51,8 @@ public class Health : MonoBehaviour
     }
     private void Start()
     {
-        health = maxHealth;
-        TickManager.Subscribe(OnTick);
+        health = maxHealth;    
+        TickManager.Subscribe(OnTick);  
     }
     private void OnTick()
     {
@@ -67,11 +68,9 @@ public class Health : MonoBehaviour
         {
             damageCollection[i] = damageOverTimeList[i].DamageCollection;
 
-            Debug.Log(damageOverTimeList[i].TicksLeft);
             if (damageOverTimeList[i].Tick())
             {
                 damageOverTimeList.RemoveAt(i);
-                Debug.Log("damaged");
             }
         }
         TakeDamage(damageCollection);

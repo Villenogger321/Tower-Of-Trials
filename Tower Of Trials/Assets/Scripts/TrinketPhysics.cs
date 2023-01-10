@@ -8,7 +8,7 @@ public class TrinketPhysics : MonoBehaviour
 
     public void SetFloorPosition(Vector2 _pos)
     {
-        floorPos = new Vector2(_pos.x, Random.Range(_pos.y - .25f, _pos.y + .25f));
+        floorPos = new Vector2(_pos.x, Random.Range(_pos.y -.4f, _pos.y));
     }
     void Start()
     {

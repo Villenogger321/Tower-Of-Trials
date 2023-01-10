@@ -24,7 +24,6 @@ public class Weapon : MonoBehaviour
 
         foreach (var onHitBase in OnHit)
         {
-            print(OnHit.Count);
             proj.AssignToProjectile(onHitBase.OnHit);
         }
     }
