@@ -1,16 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
 
+    [Header("References")]
+
     public GameObject pauseMenuUI;
+    public GameObject settingsMenuUI;
+    public GameObject inventoryMenuUI;
     public GameObject player;
+    public PlayerInput playerInput;
+
+    [Header("Navigation Buttons")]
+
+    public Slider primarySettingsButton;
+    public Button primaryMenuButton;
+    public Button primaryInventoryButton;
 
     void Update()
     {
+        if (gameIsPaused)
+        {
+            playerInput.enabled = false;
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            playerInput.enabled = true;
+            Time.timeScale = 1f;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (gameIsPaused)
@@ -22,34 +47,57 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+        if (!gameIsPaused && Input.GetKeyDown(KeyCode.Tab))
+        {
+            OpenInventory();
+        }
+        else if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Resume();
+        }
     }
 
     public void Resume()
     {
-        player.SetActive(true);          
-
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+        settingsMenuUI.SetActive(false);
+        inventoryMenuUI.SetActive(false);
+
         gameIsPaused = false;
     }
 
     public void Pause()
     {
-        player.SetActive(false);      //stop player from doing actions while the menu is up
+        primaryMenuButton.Select();
 
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        settingsMenuUI.SetActive(false);
+        inventoryMenuUI.SetActive(false);
+
         gameIsPaused = true;
     }
 
-    void OpenInventory()
+    public void OpenInventory()
     {
-        
+        primaryInventoryButton.Select();
+
+        pauseMenuUI.SetActive(false);
+        inventoryMenuUI.SetActive(true);
+        settingsMenuUI.SetActive(false);
+
+        gameIsPaused = true;
     }
 
-    void OpenSettings()
+    public void OpenSettings()
     {
+        primarySettingsButton.Select();
 
+        pauseMenuUI.SetActive(false);
+        inventoryMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(true);
+
+        gameIsPaused = true;
     }
 
     void Restart()
