@@ -24,6 +24,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-4737133880449694856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/TorchLitSting
+  m_EditorClassIdentifier: 
+  Path: snapshot:/TorchLitSting
+  Guid:
+    Data1: -2115570191
+    Data2: 1298439681
+    Data3: 348971145
+    Data4: 1112672596
+  Banks:
+  - {fileID: 6429058889363745777}
+  - {fileID: -918181989945854148}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-4552665343302864956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +121,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/sfx.bank
   Name: sfx
   StudioPath: bank:/sfx
-  lastModified: 638089550585841362
+  lastModified: 638089594592900661
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -118,12 +146,14 @@ MonoBehaviour:
   - {fileID: -2541207373760840747}
   - {fileID: 9217871620360903797}
   - {fileID: 4664616600201416131}
+  - {fileID: -4737133880449694856}
+  - {fileID: 2110513332507034824}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6429058889363745777}
   StringsBanks:
   - {fileID: 7386310804097186947}
-  cacheTime: 638089550585841362
+  cacheTime: 638089594592917202
   cacheVersion: 131601
 --- !u!114 &1577772290065956933
 MonoBehaviour:
@@ -140,9 +170,36 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/ui.bank
   Name: ui
   StudioPath: bank:/ui
-  lastModified: 638089540480042370
+  lastModified: 638089594592917202
   FileSizes: []
   Exists: 1
+--- !u!114 &2110513332507034824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/echo/SFX/TorchLightingUp
+  m_EditorClassIdentifier: 
+  Path: event:/echo/SFX/TorchLightingUp
+  Guid:
+    Data1: -178062542
+    Data2: 1277457597
+    Data3: -976609351
+    Data4: 235747686
+  Banks:
+  - {fileID: -918181989945854148}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 25201
 --- !u!114 &4664616600201416131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +243,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638089550585806332
+  lastModified: 638089594592203552
   FileSizes: []
   Exists: 1
 --- !u!114 &6429058889363745777
@@ -204,7 +261,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638089550585055987
+  lastModified: 638089594591236853
   FileSizes: []
   Exists: 1
 --- !u!114 &7386310804097186947
@@ -222,10 +279,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638089550585060097
+  lastModified: 638089594591247381
   FileSizes:
   - Name: 
-    Value: 1294
+    Value: 1464
   Exists: 1
 --- !u!114 &9217871620360903797
 MonoBehaviour:
@@ -254,4 +311,4 @@ MonoBehaviour:
   - {fileID: -8973556427436063968}
   MinDistance: 1
   MaxDistance: 20
-  Length: 263029
+  Length: 280142
