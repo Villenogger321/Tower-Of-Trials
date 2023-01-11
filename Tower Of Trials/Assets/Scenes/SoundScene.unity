@@ -211,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7fe2de17a45af543ab900c6883dee54, type: 3}
---- !u!43 &383587786
+--- !u!43 &316895924
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -548,9 +548,9 @@ GameObject:
   m_Component:
   - component: {fileID: 624288766}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: Audio Manager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2059,6 +2059,13 @@ MonoBehaviour:
   WeaponInfo: {fileID: 11400000, guid: 789d1c176a3e7314da79625f862bd0df, type: 2}
   firePos: {fileID: 15849649}
   weaponHolder: {fileID: 714345113}
+  attackRef:
+    Guid:
+      Data1: 1196339045
+      Data2: 1219472604
+      Data3: -269496949
+      Data4: -1250362596
+    Path: event:/echo/SFX/BasicAttack
 --- !u!114 &1064431775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2718,8 +2725,8 @@ MonoBehaviour:
   - {x: 0.28698802, y: 0.06944704, z: 0}
   - {x: 0.34066463, y: -0.09033346, z: 0}
   m_ShapePathHash: -1135714331
-  m_Mesh: {fileID: 383587786}
-  m_InstanceId: 50714
+  m_Mesh: {fileID: 316895924}
+  m_InstanceId: 30948
 --- !u!95 &1428393995
 Animator:
   serializedVersion: 4

@@ -24,6 +24,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-7360245339964790934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/ForestReverb
+  m_EditorClassIdentifier: 
+  Path: snapshot:/ForestReverb
+  Guid:
+    Data1: 1179654639
+    Data2: 1235500030
+    Data3: 236939917
+    Data4: 114509379
+  Banks:
+  - {fileID: 6429058889363745777}
+  - {fileID: -918181989945854148}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-4737133880449694856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +149,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/sfx.bank
   Name: sfx
   StudioPath: bank:/sfx
-  lastModified: 638089624724694315
+  lastModified: 638090031636893796
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -148,12 +176,14 @@ MonoBehaviour:
   - {fileID: 4664616600201416131}
   - {fileID: -4737133880449694856}
   - {fileID: 2110513332507034824}
+  - {fileID: -7360245339964790934}
+  - {fileID: 6983779595877371611}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6429058889363745777}
   StringsBanks:
   - {fileID: 7386310804097186947}
-  cacheTime: 638089624724709244
+  cacheTime: 638090031636909971
   cacheVersion: 131601
 --- !u!114 &1577772290065956933
 MonoBehaviour:
@@ -170,7 +200,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/ui.bank
   Name: ui
   StudioPath: bank:/ui
-  lastModified: 638089624724709244
+  lastModified: 638090031636909971
   FileSizes: []
   Exists: 1
 --- !u!114 &2110513332507034824
@@ -200,6 +230,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 25201
+--- !u!114 &3901559225574016763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BasicAttack/AttackType
+  m_EditorClassIdentifier: 
+  Name: AttackType
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3013942055
+    data2: 1816820191
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Basic
+  - Fire
+  - Ice
+  Exists: 1
 --- !u!114 &4664616600201416131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +300,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638089624723933953
+  lastModified: 638090031636125069
   FileSizes: []
   Exists: 1
 --- !u!114 &6429058889363745777
@@ -261,9 +318,37 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638089624723101586
+  lastModified: 638090031635339528
   FileSizes: []
   Exists: 1
+--- !u!114 &6983779595877371611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/echo/SFX/BasicAttack
+  m_EditorClassIdentifier: 
+  Path: event:/echo/SFX/BasicAttack
+  Guid:
+    Data1: 1196339045
+    Data2: 1219472604
+    Data3: -269496949
+    Data4: -1250362596
+  Banks:
+  - {fileID: -918181989945854148}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3901559225574016763}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7386310804097186947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,10 +364,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638089624723111575
+  lastModified: 638090031635355455
   FileSizes:
   - Name: 
-    Value: 1464
+    Value: 1736
   Exists: 1
 --- !u!114 &9217871620360903797
 MonoBehaviour:

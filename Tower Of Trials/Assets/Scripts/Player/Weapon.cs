@@ -10,6 +10,14 @@ public class Weapon : MonoBehaviour
     [SerializeField] Transform firePos;
 
     [SerializeField] Transform weaponHolder;
+
+
+    #region FMOD var
+    [Header("FMOD")]
+    public FMODUnity.EventReference attackRef;
+    private FMOD.Studio.EventInstance attackInstance;
+    #endregion
+
     public void FireProjectile()
     {
         Projectile proj =  Instantiate(WeaponInfo.Projectile);
@@ -44,10 +52,15 @@ public class Weapon : MonoBehaviour
     {
         // implemenet cooldown :-)
         FireProjectile();
+
+        //fire sfx
+        attackInstance.start();
     }
     void Start()
     {
         OnEquip();
+
+        attackInstance = FMODUnity.RuntimeManager.CreateInstance(attackRef); //fmod
     }
     void OnEquip()
     {
