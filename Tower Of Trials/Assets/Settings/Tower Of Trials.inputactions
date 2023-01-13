@@ -31,6 +31,87 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TrinketInteraction1",
+                    "type": "Button",
+                    "id": "fe1609ab-96bb-434a-818f-28a5aff89842",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold(duration=0.75)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrinketInteraction2",
+                    "type": "Button",
+                    "id": "41b966c9-9313-4295-b4e3-bb34fa524786",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold(duration=0.75)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrinketInteraction3",
+                    "type": "Button",
+                    "id": "68921bbf-8735-480b-b4b2-ba63b9d1cdc3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold(duration=0.75)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrinketInteraction4",
+                    "type": "Button",
+                    "id": "09ea0126-c545-4ab9-b3fb-7c79126cb5fa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold(duration=0.75)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrinketInteraction5",
+                    "type": "Button",
+                    "id": "e701ac6e-c7c3-4bb7-b005-f18932669c17",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap,Hold(duration=0.75)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SpawnTrinket",
+                    "type": "Button",
+                    "id": "7e89971d-2f8b-4d90-9cfa-d566c9e822e8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "5951bd9c-f573-480b-90b8-7bfd65d44a09",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Settings",
+                    "type": "Button",
+                    "id": "506847f5-04b1-45f0-8d18-87d1d988ae14",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "3f064ec3-026e-4866-99dd-269437cb00b5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -251,6 +332,105 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d17f0e0a-4aa0-47fb-bbdb-0217d352e8d6",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TrinketInteraction1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "418d7774-637c-48d5-9e29-5602a86beda1",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TrinketInteraction2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7ea594a-53ff-47ec-b5ae-909b8c1b8ab5",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TrinketInteraction3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c2d20b8-98cc-4c30-80cc-3d087e48bdcf",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TrinketInteraction4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f197022-0cf6-4137-8fb7-8c40f6018fd3",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TrinketInteraction5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d6efc82-2c1a-4c8d-b52d-fc40acd17a27",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SpawnTrinket",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d88b06a7-2458-4dfd-bb54-8816681db36b",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "92eb0830-e367-4867-93a5-f2de82843538",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Settings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e72b238-cdb4-4dcd-8f4f-43bfa86768e5",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

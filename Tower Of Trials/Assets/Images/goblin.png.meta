@@ -108,12 +108,12 @@ TextureImporter:
       name: goblin_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 14
-        width: 38
-        height: 36
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.6315789, y: 0.083333336}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -133,12 +133,12 @@ TextureImporter:
       name: goblin_1
       rect:
         serializedVersion: 2
-        x: 70
-        y: 13
-        width: 38
-        height: 37
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.6315789, y: 0.081081085}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,12 +154,12 @@ TextureImporter:
       name: goblin_2
       rect:
         serializedVersion: 2
-        x: 148
-        y: 14
-        width: 25
-        height: 36
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.48, y: 0.083333336}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: goblin_3
       rect:
         serializedVersion: 2
-        x: 213
-        y: 12
-        width: 21
-        height: 38
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.52380955, y: 0.078947365}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,12 +196,12 @@ TextureImporter:
       name: goblin_4
       rect:
         serializedVersion: 2
-        x: 279
-        y: 13
-        width: 33
-        height: 37
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.24242425, y: 0.081081085}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: goblin_5
       rect:
         serializedVersion: 2
-        x: 341
-        y: 13
-        width: 37
-        height: 37
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.2972973, y: 0.081081085}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,12 +238,12 @@ TextureImporter:
       name: goblin_6
       rect:
         serializedVersion: 2
-        x: 403
-        y: 13
-        width: 24
-        height: 37
+        x: 384
+        y: 0
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.081081085}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: goblin_7
       rect:
         serializedVersion: 2
-        x: 470
-        y: 12
-        width: 22
-        height: 39
+        x: 448
+        y: 0
+        width: 64
+        height: 64
       alignment: 9
-      pivot: {x: 0.5, y: 0.07692308}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -295,22 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WallTiles_6: -1160469016
-      WallTiles_1: 892460223
       goblin_7: 798428603
       goblin_3: 1878549677
       goblin_6: -1933131084
       goblin_1: -408343723
       goblin_5: 1879570231
-      WallTiles_5: 823327062
       goblin_0: -784614512
       goblin_2: 2135387947
-      WallTiles_3: 691875265
-      WallTiles_4: -1899344967
-      WallTiles_2: 1924321350
-      WallTiles_7: -1841391795
       goblin_4: 1348156363
-      WallTiles_0: -1647989744
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

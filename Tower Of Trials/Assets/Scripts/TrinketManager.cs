@@ -9,48 +9,115 @@ using Random = UnityEngine.Random;
 
 public class TrinketManager : MonoBehaviour
 {
-
     [SerializeField] TextAsset firstNameList, middleNameList, lastNameList;
     [SerializeField] string[] firstName, middleName, lastName;
-    public float floor = 1;
-    public TrinketRarity rarity;
+    [SerializeField] TrinketInventory inventory;
+    [SerializeField] GameObject trinketGO;
+    [SerializeField] Transform trinketParent;
 
-    void Start()
+    public Sprite[] CommonInventoryTrinketSprite, CommonItemTrinketSprite;
+    public Sprite[] RareInventoryTrinketSprite, RareItemTrinketSprite;
+    public Sprite[] EpicInventoryTrinketSprite, EpicItemTrinketSprite;
+
+    public static TrinketManager Instance;
+    void Awake()
     {
-        GenerateTrinket();
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(this);
     }
-
-    void Update()
+    public void SpawnTrinket(Vector3 _position, Trinket _trinket = null)
     {
+        GameObject trinket = Instantiate(trinketGO, _position, Quaternion.identity, trinketParent);
+        TrinketItem trinketItem = trinket.GetComponent<TrinketItem>();
 
-    }
-    void GenerateTrinket()
+        if (_trinket == null)
+            trinketItem.Trinket = GenerateTrinket();
+        else
+            trinketItem.Trinket = _trinket;
+
+        trinket.GetComponent<SpriteRenderer>().sprite = trinketItem.Trinket.sprite;
+        trinket.name = trinketItem.Trinket.name;
+
+        if (trinket.GetComponent<Rigidbody2D>() is Rigidbody2D _rb)
+            _rb.AddForce(new Vector2(Random.Range(-60, 60), 100));
+    }   
+    public Trinket GenerateTrinket()
     {
         Trinket trinket = new Trinket();
-
         trinket.name = generateName();
-        print(trinket.name);
+        trinket.rarity = TrinketRarityGenerator();
+        trinket.spriteId = Random.Range(0, CommonItemTrinketSprite.Length);
+        trinket.sprite = TrinketSpriteGenerator(trinket.rarity, trinket.spriteId);
+        trinket.trinketStats.Add(TrinketStatMath(trinket));
+        return trinket;
     }
-
-    [ContextMenu("math")]
-    void TrinketStatMath()
+    TrinketStat TrinketStatMath(Trinket _trinket)
     {
-        Trinket trinket = new Trinket();
-        TrinketStatInfo info = trinket.GetRarityInfo(rarity);
+        TrinketStat trinketStat = new TrinketStat();
+        TrinketStatInfo info = _trinket.GetRarityInfo(_trinket.rarity);
+        // first choose stat type(s)
+        trinketStat.type = (TrinketStatsType)Random.Range(0, 5);
 
-        for (int i = 0; i < 10; i++)
-        {
-            float temp = ((info.floorMultiplier * floor)) + (Random.Range(info.healthRange.x, info.healthRange.y));
-            print((int)temp);
 
-        }
+        // calculate statmodifier depending on chosen stat
+        Vector2 newModifierRange = ModifierRange(trinketStat.type, info);
+        
+        trinketStat.statModifier = (int)(info.floorMultiplier * LevelManager.Instance.GetFloor()
+                + Random.Range(newModifierRange.x, newModifierRange.y));
+
+        return trinketStat;
+    }
+    Vector2 ModifierRange(TrinketStatsType _type, TrinketStatInfo _info)
+    {
+        if (_type == TrinketStatsType.health)
+            return _info.healthRange;
+        if (_type == TrinketStatsType.damage)
+            return _info.damageRange;
+        if (_type == TrinketStatsType.attackSpeed)
+            return _info.attackSpeedRange;
+        if (_type == TrinketStatsType.movementSpeed)
+            return _info.movementSpeedRange;
+        else
+            return _info.projectileSpeedRange;
+    }
+    Sprite TrinketSpriteGenerator(TrinketRarity _rarity, int _spriteId)
+    {
+        if (_rarity == TrinketRarity.common)
+            return CommonItemTrinketSprite[_spriteId];
+
+        if (_rarity == TrinketRarity.rare)
+            return RareItemTrinketSprite[_spriteId];
+
+        return EpicItemTrinketSprite[_spriteId];
+    }
+    public Sprite GetInventoryTrinketSprite(TrinketRarity _rarity, int _spriteId)
+    {
+        if (_rarity == TrinketRarity.common)
+            return CommonInventoryTrinketSprite[_spriteId];
+
+        if (_rarity == TrinketRarity.rare)
+            return RareInventoryTrinketSprite[_spriteId];
+
+        return EpicInventoryTrinketSprite[_spriteId];
+    }
+    TrinketRarity TrinketRarityGenerator()
+    {
+        float rand = Random.Range(1, 101);
+        if (rand <= 15)     // epic trinket
+            return TrinketRarity.epic;
+        if (rand <= 40)     // rare trinket
+            return TrinketRarity.rare;
+        else                // common trinket
+            return TrinketRarity.common;
     }
     String generateName()
     {
         string name = firstName[Random.Range(0, firstName.Length - 1)];
         name = name + " " + middleName[Random.Range(0, middleName.Length - 1)];
         name = name + " " + lastName[Random.Range(0, lastName.Length - 1)];
-        return name;
+        return name = name.Replace("\r", ""); ;
     }
     [ContextMenu("Update namelist")]
     void UpdateNameList()
@@ -60,14 +127,19 @@ public class TrinketManager : MonoBehaviour
         lastName = lastNameList.text.Split('\n');
     }
 }
+[Serializable]
 public class Trinket
 {
     public string name;
     public TrinketRarity rarity;
+    public Sprite sprite;
+    public int spriteId;
+    public List<TrinketStat> trinketStats = new List<TrinketStat>();
 
 
     public TrinketStatInfo GetRarityInfo(TrinketRarity _rarity)
     {
+#pragma warning disable CS8524
         return _rarity switch
         {
             TrinketRarity.common => new TrinketStatInfo(
@@ -103,7 +175,15 @@ public class Trinket
                 projectileSpeedRange : new Vector2(28, 36),
                      floorMultiplier : 0.8f)
         };
+#pragma warning restore CS8524 // The switch expression does not handle some values of its input type (it is not exhaustive) involving an unnamed enum value.
     }
+}
+
+[Serializable]
+public class TrinketStat
+{
+    public TrinketStatsType type;
+    public float statModifier;
 }
 public struct TrinketStatInfo
 {
@@ -130,4 +210,18 @@ public enum TrinketRarity
     rare,
     epic,
     legendary
+}
+public enum TrinketStatsType
+{
+    health,
+    damage,
+    attackSpeed,
+    movementSpeed,
+    projectileSpeed
+}
+
+[CreateAssetMenu(menuName = "Tower Of Trials/TrinketUnique")]
+public class TrinketUniqueInfo : ScriptableObject
+{
+    
 }
