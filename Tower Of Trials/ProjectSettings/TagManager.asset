@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Trinket
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -14,7 +13,7 @@ TagManager:
   - UI
   - Obstacle
   - Projectile
-  - Items
+  - UI animation
   - 
   - 
   - 
@@ -39,15 +38,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Tilemap
-    uniqueID: 169124273
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 873299129
+    locked: 0
+  - name: Background
+    uniqueID: 2345870517
+    locked: 0
+  - name: Floor
+    uniqueID: 1512950971
+    locked: 0
+  - name: Walls
+    uniqueID: 2185916473
+    locked: 0
+  - name: Characters
+    uniqueID: 2317916767
     locked: 0
   - name: Projectiles
     uniqueID: 3880406615
     locked: 0
-  - name: UI
-    uniqueID: 873299129
+  - name: Tree Background
+    uniqueID: 3703144517
     locked: 0
