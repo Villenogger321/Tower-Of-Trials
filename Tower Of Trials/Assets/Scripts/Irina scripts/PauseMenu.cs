@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -7,7 +8,8 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
+    static bool gameIsPaused = false;
+    bool usingMenu = false;
 
     [Header("References")]
 
@@ -23,6 +25,16 @@ public class PauseMenu : MonoBehaviour
     public Button primaryMenuButton;
     public Button primaryInventoryButton;
 
+    [Header("Animations")]
+    public Animator menuToInventory;
+    public GameObject menuToInventoryObj;
+
+    public Animator inventoryToMenu;
+    public GameObject inventoryToMenuObj;
+
+    public Animator menuToSettings;
+    public GameObject menuToSettingsObj;
+
     void Update()
     {
         if (gameIsPaused)
@@ -36,7 +48,7 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !usingMenu)
         {
             if (gameIsPaused)
             {
@@ -57,8 +69,12 @@ public class PauseMenu : MonoBehaviour
             Resume();
         }
     }
-
-    public void Resume()
+    //-------------------------------------BUTTONS-------------------------------------------------
+    public void ResumeButton()
+    {
+        Resume();
+    }
+    void Resume()
     {
         pauseMenuUI.SetActive(false);
         settingsMenuUI.SetActive(false);
@@ -66,8 +82,17 @@ public class PauseMenu : MonoBehaviour
 
         gameIsPaused = false;
     }
+    //---------------------------------------------------------------------------------------------
+    public async void PauseButton()
+    {
+        inventoryToMenuObj.SetActive(true);
+        inventoryToMenu.SetBool("inventoryToMenu", true);
+        usingMenu = true;
 
-    public void Pause()
+        await Task.Delay(380);
+        Pause();
+    }
+    void Pause()
     {
         primaryMenuButton.Select();
 
@@ -75,10 +100,23 @@ public class PauseMenu : MonoBehaviour
         settingsMenuUI.SetActive(false);
         inventoryMenuUI.SetActive(false);
 
+        inventoryToMenu.SetBool("inventoryToMenu", false);
+        inventoryToMenuObj.SetActive(false);
+        usingMenu = false;
+
         gameIsPaused = true;
     }
+    //---------------------------------------------------------------------------------------------
+    public async void OpenInventoryButton()
+    {
+        menuToInventoryObj.SetActive(true);
+        menuToInventory.SetBool("menuToInventory", true);
+        usingMenu = true;
 
-    public void OpenInventory()
+        await Task.Delay(380);
+        OpenInventory();
+    }
+      void OpenInventory()
     {
         primaryInventoryButton.Select();
 
@@ -86,10 +124,23 @@ public class PauseMenu : MonoBehaviour
         inventoryMenuUI.SetActive(true);
         settingsMenuUI.SetActive(false);
 
+        menuToInventory.SetBool("menuToInventory", false);
+        menuToInventoryObj.SetActive(false);
+        usingMenu = false;
+
         gameIsPaused = true;
     }
+    //---------------------------------------------------------------------------------------------
+    public async void OpenSettingsButton()
+    {
+        menuToSettingsObj.SetActive(true);
+        menuToSettings.SetBool("menuToSettings", true);
+        usingMenu = true;
 
-    public void OpenSettings()
+        await Task.Delay(380);
+        OpenSettings();
+    }
+    void OpenSettings()
     {
         primarySettingsButton.Select();
 
@@ -97,16 +148,29 @@ public class PauseMenu : MonoBehaviour
         inventoryMenuUI.SetActive(false);
         settingsMenuUI.SetActive(true);
 
+        menuToSettings.SetBool("menuToSettings", false);
+        menuToSettingsObj.SetActive(false);
+
         gameIsPaused = true;
     }
-
+    //---------------------------------------------------------------------------------------------
+    public void RestartButton()
+    {
+        Restart();
+    }
     void Restart()
     {
+        Debug.Log("Restart");
         //restart scene
     }
-
+    //---------------------------------------------------------------------------------------------
+    public void QuitGameButton()
+    {
+        QuitGame();
+    }
     void QuitGame()
     {
+        Debug.Log("QuitGame");
         //load scene "title screen"
     }
 }
