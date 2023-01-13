@@ -19,11 +19,11 @@ public class TrinketManager : MonoBehaviour
     public Sprite[] RareInventoryTrinketSprite, RareItemTrinketSprite;
     public Sprite[] EpicInventoryTrinketSprite, EpicItemTrinketSprite;
 
-    public static TrinketManager instance;
+    public static TrinketManager Instance;
     void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(this);
     }
@@ -48,7 +48,8 @@ public class TrinketManager : MonoBehaviour
         Trinket trinket = new Trinket();
         trinket.name = generateName();
         trinket.rarity = TrinketRarityGenerator();
-        trinket.sprite = TrinketSpriteGenerator(trinket.rarity);
+        trinket.spriteId = Random.Range(0, CommonItemTrinketSprite.Length);
+        trinket.sprite = TrinketSpriteGenerator(trinket.rarity, trinket.spriteId);
         trinket.trinketStats.Add(TrinketStatMath(trinket));
         return trinket;
     }
@@ -63,8 +64,8 @@ public class TrinketManager : MonoBehaviour
         // calculate statmodifier depending on chosen stat
         Vector2 newModifierRange = ModifierRange(trinketStat.type, info);
         
-        trinketStat.statModifier = info.floorMultiplier * LevelManager.Instance.GetFloor()
-                + Random.Range(newModifierRange.x, newModifierRange.y);
+        trinketStat.statModifier = (int)(info.floorMultiplier * LevelManager.Instance.GetFloor()
+                + Random.Range(newModifierRange.x, newModifierRange.y));
 
         return trinketStat;
     }
@@ -81,18 +82,25 @@ public class TrinketManager : MonoBehaviour
         else
             return _info.projectileSpeedRange;
     }
-    Sprite TrinketSpriteGenerator(TrinketRarity _rarity)
+    Sprite TrinketSpriteGenerator(TrinketRarity _rarity, int _spriteId)
     {
         if (_rarity == TrinketRarity.common)
-            return CommonItemTrinketSprite[
-                Random.Range(0, CommonItemTrinketSprite.Length)];
+            return CommonItemTrinketSprite[_spriteId];
 
         if (_rarity == TrinketRarity.rare)
-            return RareItemTrinketSprite[
-                Random.Range(0, RareItemTrinketSprite.Length)];
+            return RareItemTrinketSprite[_spriteId];
 
-            return EpicItemTrinketSprite[
-                Random.Range(0, EpicItemTrinketSprite.Length)];
+        return EpicItemTrinketSprite[_spriteId];
+    }
+    public Sprite GetInventoryTrinketSprite(TrinketRarity _rarity, int _spriteId)
+    {
+        if (_rarity == TrinketRarity.common)
+            return CommonInventoryTrinketSprite[_spriteId];
+
+        if (_rarity == TrinketRarity.rare)
+            return RareInventoryTrinketSprite[_spriteId];
+
+        return EpicInventoryTrinketSprite[_spriteId];
     }
     TrinketRarity TrinketRarityGenerator()
     {
@@ -109,7 +117,7 @@ public class TrinketManager : MonoBehaviour
         string name = firstName[Random.Range(0, firstName.Length - 1)];
         name = name + " " + middleName[Random.Range(0, middleName.Length - 1)];
         name = name + " " + lastName[Random.Range(0, lastName.Length - 1)];
-        return name;
+        return name = name.Replace("\r", ""); ;
     }
     [ContextMenu("Update namelist")]
     void UpdateNameList()
@@ -125,6 +133,7 @@ public class Trinket
     public string name;
     public TrinketRarity rarity;
     public Sprite sprite;
+    public int spriteId;
     public List<TrinketStat> trinketStats = new List<TrinketStat>();
 
 

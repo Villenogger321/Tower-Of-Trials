@@ -8,18 +8,18 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
     [SerializeField] private int maxHealth = 100;
-    public Action onDeath;
-    public Action<int, DamageType> onDamage;
+    public Action OnDeath;
+    public Action<int, DamageType> OnDamage;
     private List<DamageOverTime> damageOverTimeList = new();
     public void TakeDamage(int _damage, DamageType _type = DamageType.physical)
     {
         health -= _damage;
         if (health <= 0)
         {
-            onDeath?.Invoke();
+            OnDeath?.Invoke();
             return;
         }
-        onDamage?.Invoke(health / maxHealth, _type);
+        OnDamage?.Invoke(health / maxHealth, _type);
         DisplayWorldText.DisplayText(transform, _damage.ToString(), Color.red);
     }
     public void TakeDamage(DamageCollection[] _damageCollection)
@@ -34,15 +34,23 @@ public class Health : MonoBehaviour
         health -= totalDamage;
         if (health <= 0)
         {
-            onDeath?.Invoke();
+            OnDeath?.Invoke();
             DisplayWorldText.DisplayText(transform, "L", Color.red);
             return;
         }
 
         foreach (var item in _damageCollection)
         {
-            onDamage?.Invoke(health / maxHealth, item.Type);
+            OnDamage?.Invoke(health / maxHealth, item.Type);
         }
+    }
+    public void SubscribeToDeath(Action _subscribee)
+    {
+        OnDeath += _subscribee;
+    }
+    public void UnSubscribeFromDeath(Action _subscribee)
+    {
+        OnDeath -= _subscribee;
     }
     [ContextMenu("damage")]
     private void TempTest()
@@ -57,6 +65,10 @@ public class Health : MonoBehaviour
     private void OnTick()
     {
         DealDamageOverTime();
+    }
+    void OnDisable()
+    {
+        TickManager.UnSubscribe(OnTick);
     }
     private void DealDamageOverTime()
     {

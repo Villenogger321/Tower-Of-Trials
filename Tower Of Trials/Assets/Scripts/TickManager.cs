@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class TickManager : MonoBehaviour
 {
-    [SerializeField] private int ticksPerSecond;
-    private float tickInterval;
-    private float tickTimer;
+    [SerializeField] int ticksPerSecond;
+    float tickInterval;
+    float tickTimer;
 
-    private Action tickAction;
-    private static TickManager tickManager;
+    Action tickAction;
+    static TickManager tickManager;
     void Awake()
     {
         if (tickManager != null)

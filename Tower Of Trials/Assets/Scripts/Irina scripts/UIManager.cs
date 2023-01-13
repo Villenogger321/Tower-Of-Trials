@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     public static bool gameIsPaused = false;
 
@@ -17,6 +17,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] PlayerInput playerInput;
     [SerializeField] InventoryUI inventoryUI;
+    [SerializeField] TrinketInventory trinketInventory;
+    public static UIManager Instance;
 
     [Header("Navigation Buttons")]
 
@@ -91,6 +93,14 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         gameIsPaused = true;
     }
+    void OnInteract()
+    {
+        trinketInventory.Interact();
+    }
+    public bool IsPaused()
+    {
+        return gameIsPaused;
+    }
 
     void Restart()
     {
@@ -104,6 +114,9 @@ public class PauseMenu : MonoBehaviour
     void Awake()
     {
         Resume();
-        inventoryUI = GetComponent<InventoryUI>();
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(this);
     }
 }

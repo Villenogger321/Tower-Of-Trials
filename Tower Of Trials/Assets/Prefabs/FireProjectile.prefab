@@ -46,10 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
   m_LightType: 3
-  m_BlendStyleIndex: 0
+  m_BlendStyleIndex: 2
   m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.71167225, b: 0.48584908, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.6
   m_LightVolumeIntensity: 0.03
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 000000005f9a288a574e4ae7
@@ -4969,12 +4969,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
   m_LightType: 3
-  m_BlendStyleIndex: 0
+  m_BlendStyleIndex: 2
   m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.6734554, b: 0.3443396, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 0.03
-  m_LightVolumeIntensityEnabled: 1
+  m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 000000005f9a288a574e4ae7
   m_LightCookieSprite: {fileID: 531835884, guid: f413db6b573a0e54b98e01f5a087f091, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}

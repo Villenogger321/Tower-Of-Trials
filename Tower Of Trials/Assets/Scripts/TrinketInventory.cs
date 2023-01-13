@@ -16,6 +16,8 @@ public class TrinketInventory : MonoBehaviour
 
     PlayerStats playerStats;
     TrinketManager trinketManager;
+    UIManager uiManager;
+    InventoryUI inventoryUI;
     public void EquipTrinket(Trinket _trinket, int _slot)
     {
         UnequipTrinket(_slot);
@@ -42,7 +44,9 @@ public class TrinketInventory : MonoBehaviour
     void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
-        trinketManager = TrinketManager.instance;
+        trinketManager = TrinketManager.Instance;
+        uiManager = UIManager.Instance;
+        inventoryUI = InventoryUI.Instance;
     }
     void FixedUpdate()
     {
@@ -93,6 +97,20 @@ public class TrinketInventory : MonoBehaviour
     void OnSpawnTrinket()
     {
         trinketManager.SpawnTrinket(GameObject.FindGameObjectWithTag("Player").transform.position);
+    }
+    public void Interact()
+    {
+        if (uiManager.IsPaused() && closestTrinket != null)
+        {
+            EquipTrinket(closestTrinket.GetComponent<TrinketItem>().Trinket, inventoryUI.selectedSlotInt);
+            uiManager.Resume();
+            return;
+        }
+        if (closestTrinket != null)
+        {
+            uiManager.OpenInventory();
+            inventoryUI.PickupTrinket(closestTrinket.GetComponent<TrinketItem>().Trinket);
+        }
     }
 
     void AddNewTrinket(int _slot)
