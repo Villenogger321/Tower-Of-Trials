@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
     {
         Resume();
     }
-    void Resume()
+    public void Resume()
     {
         playerInput.enabled = true;
 
@@ -106,7 +106,7 @@ public class UIManager : MonoBehaviour
         await Task.Delay(380);
         OpenInventory();
     }
-      void OpenInventory()
+      public void OpenInventory()
     {
         playerInput.enabled = false;
         primaryInventoryButton.Select();
@@ -115,12 +115,12 @@ public class UIManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         settingsMenuUI.SetActive(false);
 		inventoryUI.UpdateInventory();
-        Time.timeScale = 0f;
 
         menuToInventory.SetBool("menuToInventory", false);
         menuToInventoryObj.SetActive(false);
         usingMenu = false;
 
+        Time.timeScale = 0f;
         gameIsPaused = true;
     }
     //---------------------------------------------------------------------------------------------
