@@ -62,6 +62,7 @@ public class UIManager : MonoBehaviour
     }
     public void Resume()
     {
+        ////////////////////////// Book closing sfx
         playerInput.enabled = true;
 
         pauseMenuUI.SetActive(false);
@@ -77,11 +78,13 @@ public class UIManager : MonoBehaviour
         inventoryToMenu.SetBool("inventoryToMenu", true);
         usingMenu = true;
 
+        ////////////////////////// page turn sfx
         await Task.Delay(380);
         Pause();
     }
     void Pause()
     {
+        ////////////////////////// Book opening sfx
         playerInput.enabled = false;
         primaryMenuButton.Select();
 
@@ -102,7 +105,7 @@ public class UIManager : MonoBehaviour
         menuToInventoryObj.SetActive(true);
         menuToInventory.SetBool("menuToInventory", true);
         usingMenu = true;
-
+        ////////////////////////// page turn sfx
         await Task.Delay(380);
         OpenInventory();
     }
@@ -129,12 +132,13 @@ public class UIManager : MonoBehaviour
         menuToSettingsObj.SetActive(true);
         menuToSettings.SetBool("menuToSettings", true);
         usingMenu = true;
-
+        ////////////////////////// page turn sfx
         await Task.Delay(380);
         OpenSettings();
     }
     void OpenSettings()
     {
+
         playerInput.enabled = false;
         primarySettingsButton.Select();
 
@@ -154,7 +158,7 @@ public class UIManager : MonoBehaviour
         Restart();
     }
 		
-	    void OnInteract()
+	void OnInteract()
     {
         trinketInventory.Interact();
     }

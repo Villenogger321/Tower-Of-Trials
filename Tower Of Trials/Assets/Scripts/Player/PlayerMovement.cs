@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnMove(InputValue value)
     {
+        ////////////////////////// walking sfx (think it should be here)
         movement = value.Get<Vector2>();
 
         anim.SetFloat("Horizontal", movement.x);

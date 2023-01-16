@@ -24,6 +24,8 @@ public class Health : MonoBehaviour
     }
     public void TakeDamage(DamageCollection[] _damageCollection)
     {
+        ////////////////////////// take damage sfx
+
         int totalDamage = 0;
         foreach (var item in _damageCollection)
         {
