@@ -15,7 +15,7 @@ TagManager:
   - Obstacle
   - Projectile
   - Items
-  - 
+  - UI animation
   - 
   - 
   - 
@@ -48,6 +48,6 @@ TagManager:
   - name: Projectiles
     uniqueID: 3880406615
     locked: 0
-  - name: UI
-    uniqueID: 873299129
+  - name: Tree Background
+    uniqueID: 3703144517
     locked: 0
