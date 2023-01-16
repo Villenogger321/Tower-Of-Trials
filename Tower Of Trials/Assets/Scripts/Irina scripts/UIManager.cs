@@ -6,26 +6,29 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     static bool gameIsPaused = false;
     bool usingMenu = false;
 
     [Header("References")]
 
-    public GameObject pauseMenuUI;
-    public GameObject settingsMenuUI;
-    public GameObject inventoryMenuUI;
-    public GameObject player;
-    public PlayerInput playerInput;
+    [SerializeField] GameObject pauseMenuUI;
+    [SerializeField] GameObject settingsMenuUI;
+    [SerializeField] GameObject inventoryMenuUI;
+    [SerializeField] GameObject player;
+    [SerializeField] PlayerInput playerInput;
+    [SerializeField] InventoryUI inventoryUI;
+    [SerializeField] TrinketInventory trinketInventory;
+    public static UIManager Instance;
 
     [Header("Navigation Buttons")]
 
-    public Slider primarySettingsButton;
-    public Button primaryMenuButton;
-    public Button primaryInventoryButton;
+    [SerializeField] Slider primarySettingsButton;
+    [SerializeField] Button primaryMenuButton;
+    [SerializeField] Button primaryInventoryButton;
 
-    [Header("Animations")]
+[Header("Animations")]
     public Animator menuToInventory;
     public GameObject menuToInventoryObj;
 
@@ -34,52 +37,38 @@ public class PauseMenu : MonoBehaviour
 
     public Animator menuToSettings;
     public GameObject menuToSettingsObj;
-
-    void Update()
+    void OnSettings()
     {
+        gameIsPaused = !gameIsPaused;
+
         if (gameIsPaused)
-        {
-            playerInput.enabled = false;
-            Time.timeScale = 0f;
-        }
+            Pause();
         else
-        {
-            playerInput.enabled = true;
-            Time.timeScale = 1f;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && !usingMenu)
-        {
-            if (gameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
-        }
-
-        if (!gameIsPaused && Input.GetKeyDown(KeyCode.Tab))
-        {
-            OpenInventory();
-        }
-        else if (Input.GetKeyDown(KeyCode.Tab))
-        {
             Resume();
-        }
+    }
+    void OnInventory()
+    {
+        gameIsPaused = !gameIsPaused;
+
+        if (gameIsPaused)
+            OpenInventory();
+        else
+            Resume();
     }
     //-------------------------------------BUTTONS-------------------------------------------------
     public void ResumeButton()
     {
         Resume();
     }
-    void Resume()
+    public void Resume()
     {
+        ////////////////////////// Book closing sfx
+        playerInput.enabled = true;
+
         pauseMenuUI.SetActive(false);
         settingsMenuUI.SetActive(false);
         inventoryMenuUI.SetActive(false);
-
+        Time.timeScale = 1.0f;
         gameIsPaused = false;
     }
     //---------------------------------------------------------------------------------------------
@@ -89,16 +78,20 @@ public class PauseMenu : MonoBehaviour
         inventoryToMenu.SetBool("inventoryToMenu", true);
         usingMenu = true;
 
+        ////////////////////////// page turn sfx
         await Task.Delay(380);
         Pause();
     }
     void Pause()
     {
+        ////////////////////////// Book opening sfx
+        playerInput.enabled = false;
         primaryMenuButton.Select();
 
         pauseMenuUI.SetActive(true);
         settingsMenuUI.SetActive(false);
         inventoryMenuUI.SetActive(false);
+        Time.timeScale = 0f;
 
         inventoryToMenu.SetBool("inventoryToMenu", false);
         inventoryToMenuObj.SetActive(false);
@@ -112,22 +105,25 @@ public class PauseMenu : MonoBehaviour
         menuToInventoryObj.SetActive(true);
         menuToInventory.SetBool("menuToInventory", true);
         usingMenu = true;
-
+        ////////////////////////// page turn sfx
         await Task.Delay(380);
         OpenInventory();
     }
-      void OpenInventory()
+      public void OpenInventory()
     {
+        playerInput.enabled = false;
         primaryInventoryButton.Select();
 
-        pauseMenuUI.SetActive(false);
         inventoryMenuUI.SetActive(true);
+        pauseMenuUI.SetActive(false);
         settingsMenuUI.SetActive(false);
+		inventoryUI.UpdateInventory();
 
         menuToInventory.SetBool("menuToInventory", false);
         menuToInventoryObj.SetActive(false);
         usingMenu = false;
 
+        Time.timeScale = 0f;
         gameIsPaused = true;
     }
     //---------------------------------------------------------------------------------------------
@@ -136,12 +132,14 @@ public class PauseMenu : MonoBehaviour
         menuToSettingsObj.SetActive(true);
         menuToSettings.SetBool("menuToSettings", true);
         usingMenu = true;
-
+        ////////////////////////// page turn sfx
         await Task.Delay(380);
         OpenSettings();
     }
     void OpenSettings()
     {
+
+        playerInput.enabled = false;
         primarySettingsButton.Select();
 
         pauseMenuUI.SetActive(false);
@@ -150,13 +148,23 @@ public class PauseMenu : MonoBehaviour
 
         menuToSettings.SetBool("menuToSettings", false);
         menuToSettingsObj.SetActive(false);
-
+		
+		Time.timeScale = 0f;
         gameIsPaused = true;
     }
     //---------------------------------------------------------------------------------------------
     public void RestartButton()
     {
         Restart();
+    }
+		
+	void OnInteract()
+    {
+        trinketInventory.Interact();
+    }
+    public bool IsPaused()
+    {
+        return gameIsPaused;
     }
     void Restart()
     {
@@ -172,5 +180,13 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("QuitGame");
         //load scene "title screen"
+    }
+    void Awake()
+    {
+        Resume();
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(this);
     }
 }

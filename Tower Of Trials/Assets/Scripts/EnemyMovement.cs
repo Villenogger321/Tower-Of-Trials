@@ -94,6 +94,8 @@ public class EnemyMovement : MonoBehaviour
     }
     void WalkTowards(Vector3 _destination)
     {
+        ////////////////////////// enemy walking sfx
+
         anim.SetBool("Walking", true);
         transform.position += movementSpeed * Time.deltaTime * (_destination - transform.position).normalized;
     }

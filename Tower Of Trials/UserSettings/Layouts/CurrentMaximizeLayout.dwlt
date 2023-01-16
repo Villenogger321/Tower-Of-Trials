@@ -15,11 +15,15 @@ MonoBehaviour:
   m_Children:
   - {fileID: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 5}
   - {fileID: 14}
 =======
   - {fileID: 19}
 >>>>>>> irina
+=======
+  - {fileID: 15}
+>>>>>>> Ville
   m_Position:
     serializedVersion: 2
     x: 0
@@ -37,11 +41,15 @@ MonoBehaviour:
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 16575
 >>>>>>> Ville
 =======
   controlID: 31
 >>>>>>> irina
+=======
+  controlID: 16575
+>>>>>>> Ville
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -128,8 +136,12 @@ MonoBehaviour:
 =======
     x: 641
     y: 73
+<<<<<<< HEAD
     width: 865
 >>>>>>> irina
+=======
+    width: 1495
+>>>>>>> Ville
     height: 675
 >>>>>>> Ville
   m_ViewDataDictionary: {fileID: 0}
@@ -211,16 +223,22 @@ MonoBehaviour:
       x: 0
       y: 21
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Ville
       width: 1495
       height: 654
     m_Scale: {x: 0.60555553, y: 0.60555553}
     m_Translation: {x: 747.5, y: 327}
+<<<<<<< HEAD
 =======
       width: 865
       height: 654
     m_Scale: {x: 0.45052084, y: 0.4505208}
     m_Translation: {x: 432.5, y: 327}
 >>>>>>> irina
+=======
+>>>>>>> Ville
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -228,6 +246,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Ville
       x: -1234.4037
       y: -540
       width: 2468.8074
@@ -235,6 +256,7 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 0.60555553
   m_LastWindowPixelSize: {x: 1495, y: 675}
+<<<<<<< HEAD
 =======
       x: -960
       y: -725.8266
@@ -244,6 +266,8 @@ MonoBehaviour:
   m_defaultScale: 0.45052084
   m_LastWindowPixelSize: {x: 865, y: 675}
 >>>>>>> irina
+=======
+>>>>>>> Ville
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -269,15 +293,20 @@ MonoBehaviour:
 =======
   - {fileID: 4}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 7}
 >>>>>>> Ville
 =======
   - {fileID: 13}
 >>>>>>> irina
+=======
+  - {fileID: 7}
+>>>>>>> Ville
   m_Position:
     serializedVersion: 2
     x: 200
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     width: 1296
@@ -292,15 +321,22 @@ MonoBehaviour:
 =======
     width: 1508
 >>>>>>> irina
+=======
+    width: 1496
+>>>>>>> Ville
     height: 947
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 16576
 =======
   controlID: 32
 >>>>>>> irina
+=======
+  controlID: 16576
+>>>>>>> Ville
 --- !u!114 &4
 >>>>>>> Ville
 MonoBehaviour:
@@ -570,6 +606,7 @@ MonoBehaviour:
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1296
     height: 678
   m_MinSize: {x: 202, y: 221}
@@ -588,11 +625,15 @@ MonoBehaviour:
 =======
     width: 867
 >>>>>>> irina
+=======
+    width: 1496
+>>>>>>> Ville
     height: 696
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
+<<<<<<< HEAD
 <<<<<<< HEAD
   - {fileID: 5}
   - {fileID: 2}
@@ -607,6 +648,11 @@ MonoBehaviour:
   - {fileID: 10}
   - {fileID: 11}
   - {fileID: 12}
+=======
+  - {fileID: 5}
+  - {fileID: 2}
+  - {fileID: 6}
+>>>>>>> Ville
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &9
@@ -643,8 +689,12 @@ MonoBehaviour:
 =======
     x: 641
     y: 73
+<<<<<<< HEAD
     width: 865
 >>>>>>> irina
+=======
+    width: 1495
+>>>>>>> Ville
     height: 675
 >>>>>>> Ville
   m_ViewDataDictionary: {fileID: 0}
@@ -872,6 +922,7 @@ MonoBehaviour:
   m_Position:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -3.5174172, y: -1.8065128, z: -0.087740615}
     speed: 2
     m_Value: {x: -3.5174172, y: -1.8065128, z: -0.087740615}
@@ -885,6 +936,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 980.0233, y: 631.6821, z: 6.2343454}
 >>>>>>> irina
+=======
+    m_Target: {x: 1060.7605, y: 416.97974, z: 3.791991}
+    speed: 2
+    m_Value: {x: 1060.7605, y: 416.97974, z: 3.791991}
+>>>>>>> Ville
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -937,6 +993,7 @@ MonoBehaviour:
   m_Size:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 5.758061
     speed: 2
     m_Value: 5.758061
@@ -950,6 +1007,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 735.2381
 >>>>>>> irina
+=======
+    m_Target: 250.3083
+    speed: 2
+    m_Value: 250.3083
+>>>>>>> Ville
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1598,6 +1660,7 @@ MonoBehaviour:
     }\n}\n\n"
   m_AssetMaybeChangedOnDisk: 0
   m_AssetMaybeDeleted: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!114 &10
 =======
@@ -2312,6 +2375,9 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: 
 --- !u!114 &13
+=======
+--- !u!114 &7
+>>>>>>> Ville
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2326,25 +2392,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 8}
   - {fileID: 10}
 =======
   - {fileID: 14}
   - {fileID: 16}
 >>>>>>> irina
+=======
+  - {fileID: 8}
+  - {fileID: 10}
+>>>>>>> Ville
   m_Position:
     serializedVersion: 2
     x: 0
     y: 696
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1496
 =======
     width: 1508
 >>>>>>> irina
+=======
+    width: 1496
+>>>>>>> Ville
     height: 251
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
   controlID: 16606
 --- !u!114 &8
@@ -2352,6 +2428,10 @@ MonoBehaviour:
   controlID: 45
 --- !u!114 &14
 >>>>>>> irina
+=======
+  controlID: 16606
+--- !u!114 &8
+>>>>>>> Ville
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2371,6 +2451,9 @@ MonoBehaviour:
     width: 496
     height: 251
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Ville
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 9}
@@ -2379,6 +2462,7 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &9
+<<<<<<< HEAD
 =======
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
@@ -2389,6 +2473,8 @@ MonoBehaviour:
   m_LastSelected: 0
 --- !u!114 &15
 >>>>>>> irina
+=======
+>>>>>>> Ville
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2459,16 +2545,22 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Ville
       scrollPos: {x: 0, y: 239}
       m_SelectedIDs: b68efeff
       m_LastClickedID: -94538
       m_ExpandedIDs: b697fdffea97feffcab4feff0afbffffdc710000387200004c7200007e72000018730000987300003e74000078740000
+<<<<<<< HEAD
 =======
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 0afbffff
 >>>>>>> irina
+=======
+>>>>>>> Ville
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2485,10 +2577,14 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
         m_ClientGUIView: {fileID: 8}
 =======
         m_ClientGUIView: {fileID: 14}
 >>>>>>> irina
+=======
+        m_ClientGUIView: {fileID: 8}
+>>>>>>> Ville
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -2497,11 +2593,15 @@ MonoBehaviour:
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &10
 >>>>>>> Ville
 =======
 --- !u!114 &16
 >>>>>>> irina
+=======
+--- !u!114 &10
+>>>>>>> Ville
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2528,11 +2628,15 @@ MonoBehaviour:
     x: 496
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Ville
     width: 1000
     height: 251
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 12}
+<<<<<<< HEAD
 >>>>>>> Ville
   m_Panes:
   - {fileID: 11}
@@ -2544,10 +2648,17 @@ MonoBehaviour:
   m_LastSelected: 0
 --- !u!114 &12
 =======
+=======
+  m_Panes:
+  - {fileID: 11}
+  - {fileID: 12}
+  - {fileID: 13}
+>>>>>>> Ville
   - {fileID: 14}
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &11
+<<<<<<< HEAD
 >>>>>>> Ville
 =======
     width: 1026
@@ -2562,6 +2673,8 @@ MonoBehaviour:
   m_LastSelected: 1
 --- !u!114 &17
 >>>>>>> irina
+=======
+>>>>>>> Ville
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2590,10 +2703,14 @@ MonoBehaviour:
     x: 496
     y: 769
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 998
 =======
     width: 1024
 >>>>>>> irina
+=======
+    width: 998
+>>>>>>> Ville
     height: 230
 >>>>>>> Ville
   m_ViewDataDictionary: {fileID: 0}
@@ -2615,6 +2732,7 @@ MonoBehaviour:
     m_Folders:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Scripts/Player
 =======
     - Assets/Scripts
@@ -2622,11 +2740,15 @@ MonoBehaviour:
 =======
     - Assets/Images
 >>>>>>> irina
+=======
+    - Assets/Scripts
+>>>>>>> Ville
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 82
   m_LastFolders:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   - Assets/Scripts/Player
@@ -2645,6 +2767,8 @@ MonoBehaviour:
     m_LastClickedID: 30288
     m_ExpandedIDs: 000000007a7300004e75000000ca9a3bffffff7f
 =======
+=======
+>>>>>>> Ville
   - Assets/Scripts
   m_LastFoldersGridSize: 82
   m_LastProjectPath: C:\UnityProjects\Tower-Of-Trials\Tower Of Trials
@@ -2655,12 +2779,15 @@ MonoBehaviour:
     m_SelectedIDs: 107a0000
     m_LastClickedID: 31248
     m_ExpandedIDs: 00000000d4790000d6790000d8790000da790000dc790000de790000e0790000e2790000e4790000e6790000e8790000ea790000ec790000167a00006883000000ca9a3b
+<<<<<<< HEAD
 >>>>>>> Ville
 =======
     m_SelectedIDs: 84790000
     m_LastClickedID: 31108
     m_ExpandedIDs: 00000000827900008479000086790000887900008a7900008c7900008e7900009079000000ca9a3b
 >>>>>>> irina
+=======
+>>>>>>> Ville
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2677,10 +2804,14 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 10}
 =======
       m_ClientGUIView: {fileID: 16}
 >>>>>>> irina
+=======
+      m_ClientGUIView: {fileID: 10}
+>>>>>>> Ville
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -2694,6 +2825,7 @@ MonoBehaviour:
     m_LastClickedID: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 000000007a730000
 =======
     m_ExpandedIDs: 00000000d4790000d6790000d8790000da790000dc790000de790000e0790000e2790000e4790000e6790000e8790000ea790000ec79000000ca9a3b
@@ -2701,6 +2833,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000827900008479000086790000887900008a7900008c7900008e79000090790000
 >>>>>>> irina
+=======
+    m_ExpandedIDs: 00000000d4790000d6790000d8790000da790000dc790000de790000e0790000e2790000e4790000e6790000e8790000ea790000ec79000000ca9a3b
+>>>>>>> Ville
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2727,15 +2862,19 @@ MonoBehaviour:
   m_ListAreaState:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedInstanceIDs: fa750000
     m_LastClickedInstanceID: 30202
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000050970000d46d00003a700000806e000096700000
 =======
+=======
+>>>>>>> Ville
     m_SelectedInstanceIDs: a249fdff
     m_LastClickedInstanceID: -177758
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000050970000d46d00003a700000806e0000967000002aab000024810000
+<<<<<<< HEAD
 >>>>>>> Ville
 =======
     m_SelectedInstanceIDs: 
@@ -2743,6 +2882,8 @@ MonoBehaviour:
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000050970000d46d00003a700000806e00009670000050bb0000da730000d27300004ac00000047100006caa0000000000008ec70000520dfeff58e800000e980000ee740000fc740000e2740000
 >>>>>>> irina
+=======
+>>>>>>> Ville
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2760,6 +2901,7 @@ MonoBehaviour:
       m_IsRenamingFilename: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 0}
 =======
       m_ClientGUIView: {fileID: 10}
@@ -2767,6 +2909,9 @@ MonoBehaviour:
 =======
       m_ClientGUIView: {fileID: 16}
 >>>>>>> irina
+=======
+      m_ClientGUIView: {fileID: 10}
+>>>>>>> Ville
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -2779,10 +2924,14 @@ MonoBehaviour:
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &12
 =======
 --- !u!114 &18
 >>>>>>> irina
+=======
+--- !u!114 &12
+>>>>>>> Ville
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2813,6 +2962,9 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Ville
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2965,10 +3117,13 @@ MonoBehaviour:
   m_LayerEditor:
     m_SelectedLayerIndex: 0
 --- !u!114 &15
+<<<<<<< HEAD
 >>>>>>> Ville
 =======
 --- !u!114 &19
 >>>>>>> irina
+=======
+>>>>>>> Ville
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2984,6 +3139,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1496
     y: 0
     width: 424
@@ -2993,10 +3149,16 @@ MonoBehaviour:
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
 =======
+=======
+    x: 1496
+    y: 0
+    width: 424
+>>>>>>> Ville
     height: 947
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
+<<<<<<< HEAD
 >>>>>>> Ville
   m_Panes:
   - {fileID: 15}
@@ -3018,6 +3180,13 @@ MonoBehaviour:
   m_LastSelected: 1
 --- !u!114 &20
 >>>>>>> irina
+=======
+  m_Panes:
+  - {fileID: 16}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &16
+>>>>>>> Ville
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3038,6 +3207,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1496
 <<<<<<< HEAD
     y: 83
@@ -3051,6 +3221,11 @@ MonoBehaviour:
     y: 73
     width: 411
 >>>>>>> irina
+=======
+    x: 1496
+    y: 73
+    width: 423
+>>>>>>> Ville
     height: 926
 >>>>>>> Ville
   m_ViewDataDictionary: {fileID: 0}

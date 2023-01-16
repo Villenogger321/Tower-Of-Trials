@@ -50,6 +50,8 @@ public class Weapon : MonoBehaviour
     void OnFire()
     {
         // implemenet cooldown :-)
+
+        ////////////////////////// Shooting sfx
         FireProjectile();
 
         //fire sfx

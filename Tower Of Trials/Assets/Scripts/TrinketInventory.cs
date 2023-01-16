@@ -20,6 +20,8 @@ public class TrinketInventory : MonoBehaviour
     InventoryUI inventoryUI;
     public void EquipTrinket(Trinket _trinket, int _slot)
     {
+        ////////////////////////// equip sfx
+
         UnequipTrinket(_slot);
         equippedTrinkets[_slot] = _trinket;
         playerStats.ApplyStats(_trinket.trinketStats);
@@ -31,6 +33,8 @@ public class TrinketInventory : MonoBehaviour
         if (equippedTrinkets[_slot].name == "" || equippedTrinkets[_slot].name == null)
             return;
 
+        ////////////////////////// unequip/drop sfx
+
         Trinket selectedTrinket = equippedTrinkets[_slot];
         
         // spawn trinket in overworld
@@ -41,7 +45,7 @@ public class TrinketInventory : MonoBehaviour
         playerStats.RemoveStats(equippedTrinkets[_slot].trinketStats);
         equippedTrinkets[_slot] = null;
     }
-    void Awake()
+    void Start()
     {
         playerStats = GetComponent<PlayerStats>();
         trinketManager = TrinketManager.Instance;
