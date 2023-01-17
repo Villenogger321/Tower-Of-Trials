@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
@@ -25,18 +26,22 @@ public class LevelManager : MonoBehaviour
         if (Instance == null)
             Instance = this;
         else
-            Destroy(this);
-        Environment = GameObject.Find("Environment").transform;
+            Destroy(gameObject);
+
         DontDestroyOnLoad(gameObject);
         spawnpoints = transform.GetComponentsInChildren<Spawnpoint>();
     }
     void Start()
     {
-        LoadLevel();
+        
     }
     public void LoadLevel()
     {
         levelStart?.Invoke();
+
+        SceneManager.LoadScene(Random.Range(1, SceneManager.sceneCountInBuildSettings));
+
+        // spawn everything
     }
     public GameObject GetRandomLootSpawnable()
     {

@@ -21,7 +21,7 @@ public class Spawnpoint : MonoBehaviour
     {
         if (Random.Range(0, 100) > spawnChance)
             return;
-        spawnedObject = Instantiate(spawnObject, transform.position, Quaternion.identity, levelManager.Environment.GetChild(2));
+        spawnedObject = Instantiate(spawnObject, transform.position, Quaternion.identity);
     
                 
     }
