@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
 
     //FMOD
     [Header("FMOD")]
-    private FMOD.Studio.EventInstance uiScrollInstance;
+    
     private FMOD.Studio.EventInstance uiPressInstance;
     private FMOD.Studio.EventInstance uiPressStartInstance;
     private FMOD.Studio.EventInstance uiPageFlipInstance;
@@ -88,6 +88,7 @@ public class UIManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public async void PauseButton()
     {
+        uiPressInstance.start(); //pressNoise
                                                    //button click noise
         inventoryToMenuObj.SetActive(true);
         inventoryToMenu.SetBool("inventoryToMenu", true);
@@ -121,6 +122,7 @@ public class UIManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public async void OpenInventoryButton()
     {
+        uiPressInstance.start(); //press
                                                  //button click noise
         inventoryUI.UpdateInventory();
         menuToInventoryObj.SetActive(true);
@@ -152,6 +154,7 @@ public class UIManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public async void OpenSettingsButton()
     {
+        uiPressInstance.start();
                                                        //button click noise
         menuToSettingsObj.SetActive(true);
         menuToSettings.SetBool("menuToSettings", true);
@@ -181,6 +184,7 @@ public class UIManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public void RestartButton()
     {
+        uiPressInstance.start(); //press
                                                       //button click noise
         Restart();
     }
@@ -201,6 +205,7 @@ public class UIManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public void QuitGameButton()
     {
+        uiPressInstance.start(); //press
                                                      //button click noise
         QuitGame();
     }
@@ -215,11 +220,9 @@ public class UIManager : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
-<<<<<<< HEAD
 
         #region FMOD
 
-        uiScrollInstance = FMODUnity.RuntimeManager.CreateInstance("event:/UI/Scroll");
         uiPressInstance = FMODUnity.RuntimeManager.CreateInstance("event:/UI/Press");
         uiPressStartInstance = FMODUnity.RuntimeManager.CreateInstance("event:/UI/PressStart");
         uiPageFlipInstance = FMODUnity.RuntimeManager.CreateInstance("event:/UI/PageFlip");
@@ -228,10 +231,8 @@ public class UIManager : MonoBehaviour
 
         #endregion
         //declaring FMOD variabels
-=======
         AssignPlayer();
         Resume();
->>>>>>> Ville
     }
     void AssignPlayer()
     { 
