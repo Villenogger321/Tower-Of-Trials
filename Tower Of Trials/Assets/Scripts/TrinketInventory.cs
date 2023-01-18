@@ -11,7 +11,7 @@ public class TrinketInventory : MonoBehaviour
     [SerializeField] Trinket[] equippedTrinkets = new Trinket[5];
     [SerializeField] List<Transform> closeTrinkets = null;
     [SerializeField] Transform closestTrinket = null;
-    [SerializeField] Transform trinketTooltip;
+    [SerializeField] Transform trinketTooltip, trinketTooltipPrefab;
     [SerializeField] Vector3 tooltipOffset;
 
     PlayerStats playerStats;
@@ -43,7 +43,7 @@ public class TrinketInventory : MonoBehaviour
 
         // remove trinket stats from player & reset name
         playerStats.RemoveStats(equippedTrinkets[_slot].trinketStats);
-        equippedTrinkets[_slot] = null;
+        equippedTrinkets[_slot] = new Trinket();
     }
     void Start()
     {
@@ -51,6 +51,9 @@ public class TrinketInventory : MonoBehaviour
         trinketManager = TrinketManager.Instance;
         uiManager = UIManager.Instance;
         inventoryUI = InventoryUI.Instance;
+
+        if (trinketTooltip == null)
+            trinketTooltip = Instantiate(trinketTooltipPrefab);
     }
     void FixedUpdate()
     {

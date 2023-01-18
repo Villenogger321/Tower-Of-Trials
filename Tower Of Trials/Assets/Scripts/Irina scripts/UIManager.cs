@@ -102,11 +102,13 @@ public class UIManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public async void OpenInventoryButton()
     {
+        inventoryUI.UpdateInventory();
         menuToInventoryObj.SetActive(true);
         menuToInventory.SetBool("menuToInventory", true);
         usingMenu = true;
         ////////////////////////// page turn sfx
         await Task.Delay(380);
+        menuToInventory.SetBool("menuToInventory", false);
         OpenInventory();
     }
       public void OpenInventory()
@@ -119,7 +121,6 @@ public class UIManager : MonoBehaviour
         settingsMenuUI.SetActive(false);
 		inventoryUI.UpdateInventory();
 
-        menuToInventory.SetBool("menuToInventory", false);
         menuToInventoryObj.SetActive(false);
         usingMenu = false;
 
@@ -183,10 +184,15 @@ public class UIManager : MonoBehaviour
     }
     void Awake()
     {
+        LevelManager.Subscribe(AssignPlayer);
         Resume();
         if (Instance == null)
             Instance = this;
         else
             Destroy(this);
+    }
+    void AssignPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 }

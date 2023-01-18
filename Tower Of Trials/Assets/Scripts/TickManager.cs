@@ -15,7 +15,7 @@ public class TickManager : MonoBehaviour
     {
         if (tickManager != null)
         {
-            Debug.LogWarning("Multiple tick managers");
+            Destroy(gameObject);
             return;
         }
         tickInterval = 1f / ticksPerSecond;
