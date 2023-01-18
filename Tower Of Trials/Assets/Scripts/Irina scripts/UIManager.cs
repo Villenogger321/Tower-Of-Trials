@@ -184,15 +184,18 @@ public class UIManager : MonoBehaviour
     }
     void Awake()
     {
-        LevelManager.Subscribe(AssignPlayer);
-        Resume();
         if (Instance == null)
             Instance = this;
         else
             Destroy(this);
+        AssignPlayer();
+        Resume();
     }
     void AssignPlayer()
-    {
+    { 
+        print("assigned");
         player = GameObject.FindGameObjectWithTag("Player");
+        playerInput = player.GetComponent<PlayerInput>();
+        trinketInventory = player.GetComponent<TrinketInventory>();
     }
 }
