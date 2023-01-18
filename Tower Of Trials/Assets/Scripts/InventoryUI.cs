@@ -21,6 +21,7 @@ public class InventoryUI : MonoBehaviour
     void Start()
     {
         trinketManager = TrinketManager.Instance;
+        trinketInventory = GameObject.Find("Player").GetComponent<TrinketInventory>();
     }
     void Awake()
     {

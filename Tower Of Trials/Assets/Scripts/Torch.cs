@@ -22,6 +22,7 @@ public class Torch : MonoBehaviour
 
     public void LightTorch()
     {
+        print("lit");
         anim.SetBool("Lit", true);
 
         torchLitInstance.start(); //FMOD

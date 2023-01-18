@@ -48,6 +48,12 @@ TagManager:
   - name: Projectiles
     uniqueID: 3880406615
     locked: 0
+  - name: Roof
+    uniqueID: 3952361527
+    locked: 0
   - name: Tree Background
     uniqueID: 3703144517
+    locked: 0
+  - name: objects
+    uniqueID: 3820738949
     locked: 0

@@ -20,8 +20,15 @@ public class TorchLighter : MonoBehaviour
         {
             if (col.GetComponent<Torch>() is Torch torch)
             {
-                torch.LightTorch();
-                unlitTorches.Remove(torch);
+                for (int i = 0; i < unlitTorches.Count; i++)
+                {
+                    if (unlitTorches[i] == torch)
+                    {
+                        torch.LightTorch();
+                        unlitTorches.Remove(torch);
+                        return;
+                    }
+                }
             }
         }
     }
