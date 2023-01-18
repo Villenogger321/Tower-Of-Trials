@@ -58,6 +58,7 @@ public class UIManager : MonoBehaviour
     //-------------------------------------BUTTONS-------------------------------------------------
     public void ResumeButton()
     {
+                                                    //button click noise
         Resume();
     }
     public void Resume()
@@ -74,6 +75,7 @@ public class UIManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public async void PauseButton()
     {
+                                                   //button click noise
         inventoryToMenuObj.SetActive(true);
         inventoryToMenu.SetBool("inventoryToMenu", true);
         usingMenu = true;
@@ -86,7 +88,7 @@ public class UIManager : MonoBehaviour
     {
         ////////////////////////// Book opening sfx
         playerInput.enabled = false;
-        primaryMenuButton.Select();
+        //primaryMenuButton.Select();
 
         pauseMenuUI.SetActive(true);
         settingsMenuUI.SetActive(false);
@@ -102,6 +104,7 @@ public class UIManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public async void OpenInventoryButton()
     {
+                                                 //button click noise
         inventoryUI.UpdateInventory();
         menuToInventoryObj.SetActive(true);
         menuToInventory.SetBool("menuToInventory", true);
@@ -114,7 +117,7 @@ public class UIManager : MonoBehaviour
       public void OpenInventory()
     {
         playerInput.enabled = false;
-        primaryInventoryButton.Select();
+        //primaryInventoryButton.Select();
 
         inventoryMenuUI.SetActive(true);
         pauseMenuUI.SetActive(false);
@@ -130,6 +133,7 @@ public class UIManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public async void OpenSettingsButton()
     {
+                                                       //button click noise
         menuToSettingsObj.SetActive(true);
         menuToSettings.SetBool("menuToSettings", true);
         usingMenu = true;
@@ -141,7 +145,7 @@ public class UIManager : MonoBehaviour
     {
 
         playerInput.enabled = false;
-        primarySettingsButton.Select();
+       // primarySettingsButton.Select();
 
         pauseMenuUI.SetActive(false);
         inventoryMenuUI.SetActive(false);
@@ -156,6 +160,7 @@ public class UIManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public void RestartButton()
     {
+                                                      //button click noise
         Restart();
     }
 		
@@ -175,6 +180,7 @@ public class UIManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public void QuitGameButton()
     {
+                                                     //button click noise
         QuitGame();
     }
     void QuitGame()
