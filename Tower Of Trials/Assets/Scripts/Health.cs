@@ -11,6 +11,13 @@ public class Health : MonoBehaviour
     public Action OnDeath;
     public Action<int, DamageType> OnDamage;
     private List<DamageOverTime> damageOverTimeList = new();
+
+    private FMOD.Studio.EventInstance takeDamageInstance;
+
+
+
+
+
     public void TakeDamage(int _damage, DamageType _type = DamageType.physical)
     {
         health -= _damage;
@@ -25,6 +32,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(DamageCollection[] _damageCollection)
     {
         ////////////////////////// take damage sfx
+        takeDamageInstance.start();
 
         int totalDamage = 0;
         foreach (var item in _damageCollection)
@@ -62,7 +70,9 @@ public class Health : MonoBehaviour
     private void Start()
     {
         health = maxHealth;    
-        TickManager.Subscribe(OnTick);  
+        TickManager.Subscribe(OnTick);
+
+        takeDamageInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/player/Damage");
     }
     private void OnTick()
     {

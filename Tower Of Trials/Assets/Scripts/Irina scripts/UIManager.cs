@@ -37,6 +37,17 @@ public class UIManager : MonoBehaviour
 
     public Animator menuToSettings;
     public GameObject menuToSettingsObj;
+
+    //FMOD
+    [Header("FMOD")]
+    private FMOD.Studio.EventInstance uiScrollInstance;
+    private FMOD.Studio.EventInstance uiPressInstance;
+    private FMOD.Studio.EventInstance uiPressStartInstance;
+    private FMOD.Studio.EventInstance uiPageFlipInstance;
+    private FMOD.Studio.EventInstance uiBookOpeningInstance;
+    private FMOD.Studio.EventInstance uiBookClosingInstance;
+
+
     void OnSettings()
     {
         gameIsPaused = !gameIsPaused;
@@ -63,6 +74,8 @@ public class UIManager : MonoBehaviour
     public void Resume()
     {
         ////////////////////////// Book closing sfx
+        uiBookClosingInstance.start();
+
         playerInput.enabled = true;
 
         pauseMenuUI.SetActive(false);
@@ -79,12 +92,16 @@ public class UIManager : MonoBehaviour
         usingMenu = true;
 
         ////////////////////////// page turn sfx
+        uiPageFlipInstance.start();
+
         await Task.Delay(380);
         Pause();
     }
     void Pause()
     {
         ////////////////////////// Book opening sfx
+        uiBookOpeningInstance.start();
+
         playerInput.enabled = false;
         primaryMenuButton.Select();
 
@@ -107,6 +124,8 @@ public class UIManager : MonoBehaviour
         menuToInventory.SetBool("menuToInventory", true);
         usingMenu = true;
         ////////////////////////// page turn sfx
+        uiPageFlipInstance.start();
+
         await Task.Delay(380);
         menuToInventory.SetBool("menuToInventory", false);
         OpenInventory();
@@ -134,6 +153,8 @@ public class UIManager : MonoBehaviour
         menuToSettings.SetBool("menuToSettings", true);
         usingMenu = true;
         ////////////////////////// page turn sfx
+        uiPageFlipInstance.start();
+
         await Task.Delay(380);
         OpenSettings();
     }
@@ -190,6 +211,18 @@ public class UIManager : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
+
+        #region FMOD
+
+        uiScrollInstance = FMODUnity.RuntimeManager.CreateInstance("event:/UI/Scroll");
+        uiPressInstance = FMODUnity.RuntimeManager.CreateInstance("event:/UI/Press");
+        uiPressStartInstance = FMODUnity.RuntimeManager.CreateInstance("event:/UI/PressStart");
+        uiPageFlipInstance = FMODUnity.RuntimeManager.CreateInstance("event:/UI/PageFlip");
+        uiBookOpeningInstance = FMODUnity.RuntimeManager.CreateInstance("event:/UI/OpenBook");
+        uiBookClosingInstance = FMODUnity.RuntimeManager.CreateInstance("event:/UI/CloseBook");
+
+        #endregion
+        //declaring FMOD variabels
     }
     void AssignPlayer()
     {

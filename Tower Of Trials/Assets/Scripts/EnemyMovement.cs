@@ -16,10 +16,16 @@ public class EnemyMovement : MonoBehaviour
     Vector2 startPos, wanderingDestination;
     Animator anim;
     Transform player;
+
+
+    private FMOD.Studio.EventInstance goblinWalkInstance;
+
     void Start()
     {
         player = PlayerStats.Player;
         startPos = transform.position;
+
+        goblinWalkInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinSteps");
     }
     void Awake()
     {
@@ -28,6 +34,9 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(goblinWalkInstance, GetComponent<Transform>(), GetComponent<Rigidbody2D>()); //FMOD
+
         switch (state)
         {
             case EnemyAIState.idle:
@@ -52,6 +61,8 @@ public class EnemyMovement : MonoBehaviour
     {
         curTimer -= Time.deltaTime;
         anim.SetBool("Walking", false);
+
+        goblinWalkInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
         if (curTimer <= 0)
         {
@@ -84,6 +95,8 @@ public class EnemyMovement : MonoBehaviour
         // start anim
         anim.SetBool("Walking", false);
         anim.SetBool("Attacking", true);
+
+        goblinWalkInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
     void CheckForAggroToPlayer()
     {
@@ -95,6 +108,7 @@ public class EnemyMovement : MonoBehaviour
     void WalkTowards(Vector3 _destination)
     {
         ////////////////////////// enemy walking sfx
+        goblinWalkInstance.start();
 
         anim.SetBool("Walking", true);
         transform.position += movementSpeed * Time.deltaTime * (_destination - transform.position).normalized;

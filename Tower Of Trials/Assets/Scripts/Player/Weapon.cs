@@ -14,7 +14,6 @@ public class Weapon : MonoBehaviour
 
     #region FMOD var
     [Header("FMOD")]
-    public FMODUnity.EventReference attackRef;
     private FMOD.Studio.EventInstance attackInstance;
     #endregion
 
@@ -52,16 +51,18 @@ public class Weapon : MonoBehaviour
         // implemenet cooldown :-)
 
         ////////////////////////// Shooting sfx
+        attackInstance.start();  //FMOD
+
         FireProjectile();
 
         //fire sfx
-        attackInstance.start();
+        
     }
     void Start()
     {
         OnEquip();
 
-        attackInstance = FMODUnity.RuntimeManager.CreateInstance(attackRef); //fmod
+        attackInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/player/Attack"); //fmod
     }
     void OnEquip()
     {

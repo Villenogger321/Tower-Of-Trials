@@ -18,9 +18,16 @@ public class TrinketInventory : MonoBehaviour
     TrinketManager trinketManager;
     UIManager uiManager;
     InventoryUI inventoryUI;
+
+
+    private FMOD.Studio.EventInstance equipTrinketInstance;
+    private FMOD.Studio.EventInstance unEquipTrinketInstance;
+
     public void EquipTrinket(Trinket _trinket, int _slot)
     {
         ////////////////////////// equip sfx
+        equipTrinketInstance.start();
+
 
         UnequipTrinket(_slot);
         equippedTrinkets[_slot] = _trinket;
@@ -34,6 +41,7 @@ public class TrinketInventory : MonoBehaviour
             return;
 
         ////////////////////////// unequip/drop sfx
+        unEquipTrinketInstance.start();
 
         Trinket selectedTrinket = equippedTrinkets[_slot];
         
@@ -54,6 +62,10 @@ public class TrinketInventory : MonoBehaviour
 
         if (trinketTooltip == null)
             trinketTooltip = Instantiate(trinketTooltipPrefab);
+
+        //FMOD
+        equipTrinketInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/env/TrinketEquip");
+        unEquipTrinketInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/env/TrinketUnequip");
     }
     void FixedUpdate()
     {

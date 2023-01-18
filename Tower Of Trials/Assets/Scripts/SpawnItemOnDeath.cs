@@ -6,15 +6,23 @@ using UnityEngine;
 public class SpawnItemOnDeath : MonoBehaviour
 {
     Health health;
+
+
+    private FMOD.Studio.EventInstance crateBreakInstance;
+
     void Start()
     {
         health = GetComponent<Health>();
         health.SubscribeToDeath(SpawnItem);
+
+        crateBreakInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/env/CrateBreak");
     }
 
     void SpawnItem()
     {
         ////////////////////////// crate breaking sfx
+        crateBreakInstance.start();
+
         // spawn item
     }
 }
