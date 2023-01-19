@@ -11,23 +11,16 @@ public class Health : MonoBehaviour
     public Action OnDeath;
     public Action<int, DamageType> OnDamage;
     private List<DamageOverTime> damageOverTimeList = new();
-
-    #region FMOD variables
-
-    //Player
-    private FMOD.Studio.EventInstance playerDamageInstance;
-    private FMOD.Studio.EventInstance playerDeathInstance;
-
-    //goblin
-    private FMOD.Studio.EventInstance goblinDamageInstance;
-    private FMOD.Studio.EventInstance goblinDeathInstance;
-
-    #endregion
-
-
     public void TakeDamage(int _damage, DamageType _type = DamageType.physical)
     {
+        if (transform.CompareTag("Player"))
+            PlayerTakeDamage(_damage);
+
+        if (transform.CompareTag("Enemy"))
+            EnemyTakeDamage(_damage);
+
         health -= _damage;
+
         if (health <= 0)
         {
             OnDeath?.Invoke();
@@ -46,11 +39,6 @@ public class Health : MonoBehaviour
             totalDamage += item.Damage; // multiply with damage type resistance
             DisplayWorldText.DisplayText(transform, item.Damage.ToString(), Color.red);
         }
-        if (transform.CompareTag("Player"))
-            PlayerTakeDamage(totalDamage);
-
-        if (transform.CompareTag("Enemy"))
-            EnemyTakeDamage(totalDamage);
 
         health -= totalDamage;
         if (health <= 0)
@@ -77,16 +65,6 @@ public class Health : MonoBehaviour
     {
         health = maxHealth;    
         TickManager.Subscribe(OnTick);
-
-        #region FMOD var assignment
-
-        playerDamageInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/player/Damage");
-        playerDeathInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/player/Death");
-
-        goblinDamageInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinDamage");
-        goblinDeathInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinDeath");
-
-        #endregion
     }
     private void OnTick()
     {
@@ -97,30 +75,23 @@ public class Health : MonoBehaviour
         TickManager.UnSubscribe(OnTick);
     }
 
-    void PlayerTakeDamage(float _totalDamage)
+    void PlayerTakeDamage(float _damage)
     {
-
-        if (health - _totalDamage <= 0)
+        // player damage sound
+        if (health - _damage <= 0)
         {
-            playerDeathInstance.start(); // player death sound
-        }
-        else
-        {
-            playerDamageInstance.start(); // player damage sound
+            // player death sound
         }
         // if you don't want damage & death sound to stack when dying you'll just
         // write else here :-)
     }
-    void EnemyTakeDamage(float _totalDamage)
+    void EnemyTakeDamage(float _damage)
     {
-        
-        if (health - _totalDamage <= 0)
+        print("test");
+        // enemy damage sound
+        if (health - _damage <= 0)
         {
-            goblinDeathInstance.start(); // enemy death sound
-        }
-        else
-        {
-            goblinDamageInstance.start(); // enemy damage sound
+            // enemy death sound
         }
         // if you don't want damage & death sound to stack when dying you'll just
         // write else here :-)
