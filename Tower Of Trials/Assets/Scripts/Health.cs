@@ -13,7 +13,14 @@ public class Health : MonoBehaviour
     private List<DamageOverTime> damageOverTimeList = new();
     public void TakeDamage(int _damage, DamageType _type = DamageType.physical)
     {
+        if (transform.CompareTag("Player"))
+            PlayerTakeDamage(_damage);
+
+        if (transform.CompareTag("Enemy"))
+            EnemyTakeDamage(_damage);
+
         health -= _damage;
+
         if (health <= 0)
         {
             OnDeath?.Invoke();
@@ -32,11 +39,6 @@ public class Health : MonoBehaviour
             totalDamage += item.Damage; // multiply with damage type resistance
             DisplayWorldText.DisplayText(transform, item.Damage.ToString(), Color.red);
         }
-        if (transform.CompareTag("Player"))
-            PlayerTakeDamage(totalDamage);
-
-        if (transform.CompareTag("Enemy"))
-            EnemyTakeDamage(totalDamage);
 
         health -= totalDamage;
         if (health <= 0)
@@ -73,20 +75,21 @@ public class Health : MonoBehaviour
         TickManager.UnSubscribe(OnTick);
     }
 
-    void PlayerTakeDamage(float _totalDamage)
+    void PlayerTakeDamage(float _damage)
     {
         // player damage sound
-        if (health - _totalDamage <= 0)
+        if (health - _damage <= 0)
         {
             // player death sound
         }
         // if you don't want damage & death sound to stack when dying you'll just
         // write else here :-)
     }
-    void EnemyTakeDamage(float _totalDamage)
+    void EnemyTakeDamage(float _damage)
     {
+        print("test");
         // enemy damage sound
-        if (health - _totalDamage <= 0)
+        if (health - _damage <= 0)
         {
             // enemy death sound
         }
