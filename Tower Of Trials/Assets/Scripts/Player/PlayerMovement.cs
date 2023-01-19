@@ -13,14 +13,30 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     Rigidbody2D rb;
 
+
+    private FMOD.Studio.EventInstance footstepInstance;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        footstepInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/player/Footsteps");
     }
+
+    void Start()
+    {
+        footstepInstance.start();
+    }
+
     void Update()
     {
         Movement();
+        //Debug.Log(movement);
+        //Debug.Log(Mathf.Abs(movement.x) + Mathf.Abs(movement.y));
+
+        footstepInstance.setParameterByName("isMoving", Mathf.Abs(movement.x) + Mathf.Abs(movement.y));
+
     }
     void Movement()
     {
@@ -29,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue value)
     {
         ////////////////////////// walking sfx (think it should be here)
+
+        
         movement = value.Get<Vector2>();
 
         anim.SetFloat("Horizontal", movement.x);

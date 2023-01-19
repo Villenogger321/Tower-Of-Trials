@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Intensity: 0.6
   m_LightVolumeIntensity: 0.03
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000005f9a288a574e4ae7
+  m_ApplyToSortingLayers: b1a1140a00000000574e4ae7374094eb4580b9dc85d9bbe3
   m_LightCookieSprite: {fileID: 531835884, guid: f413db6b573a0e54b98e01f5a087f091, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -4891,7 +4891,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -414560681
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -4975,7 +4975,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 0.03
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000005f9a288a574e4ae7
+  m_ApplyToSortingLayers: b1a1140a00000000574e4ae7374094eb4580b9dc85d9bbe3
   m_LightCookieSprite: {fileID: 531835884, guid: f413db6b573a0e54b98e01f5a087f091, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -5112,7 +5112,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -414560681
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -199521485, guid: dc5381024170cd445b459d01a89bf3a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

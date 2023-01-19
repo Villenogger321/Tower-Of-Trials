@@ -1,7 +1,6 @@
 using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -21,10 +20,20 @@ public class EnemyMovement : MonoBehaviour
 
     Animator anim;
     Transform player;
+
+
+    private FMOD.Studio.EventInstance goblinWalkInstance;
+    private FMOD.Studio.EventInstance goblinIdleInstance;
+    private FMOD.Studio.EventInstance goblinAttackInstance;
+
     void Start()
     {
         player = PlayerStats.Player;
         startPos = transform.position;
+
+        goblinWalkInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinSteps");
+        goblinAttackInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinAttack");
+        goblinIdleInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinTalk");
     }
     void Awake()
     {
@@ -33,6 +42,9 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(goblinWalkInstance, GetComponent<Transform>(), GetComponent<Rigidbody2D>()); //FMOD
+
         switch (state)
         {
             case EnemyAIState.idle:
@@ -55,8 +67,13 @@ public class EnemyMovement : MonoBehaviour
     }
     void HandleIdleState()
     {
+        //idle sound(s)
+        goblinIdleInstance.start();
+
         curTimer -= Time.deltaTime;
         anim.SetBool("Walking", false);
+
+        goblinWalkInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
         if (curTimer <= 0)
         {
@@ -76,6 +93,9 @@ public class EnemyMovement : MonoBehaviour
     }
     void HandleChasingState()
     {
+        //"chasing" , stop idle sound
+        goblinIdleInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
         if (Vector2.Distance(transform.position, player.position) < attackRadius)
         {
             state = EnemyAIState.attacking;
@@ -97,6 +117,8 @@ public class EnemyMovement : MonoBehaviour
     }
     void HandleAttackingState()
     {
+        //attack sfx
+        goblinAttackInstance.start();
         // start anim
         if (attackTimer > 0)
         {
@@ -107,6 +129,8 @@ public class EnemyMovement : MonoBehaviour
         attackTimer = attackCooldown;
         anim.SetBool("Walking", false);
         anim.SetBool("Attacking", true);
+
+        goblinWalkInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
     void CheckForAggroToPlayer()
     {
@@ -118,6 +142,7 @@ public class EnemyMovement : MonoBehaviour
     void WalkTowards(Vector3 _destination)
     {
         ////////////////////////// enemy walking sfx
+        goblinWalkInstance.start();
 
         anim.SetBool("Walking", true);
         transform.position += movementSpeed * Time.deltaTime * (_destination - transform.position).normalized;
