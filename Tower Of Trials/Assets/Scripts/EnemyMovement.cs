@@ -7,12 +7,17 @@ public class EnemyMovement : MonoBehaviour
 {
     [Header("Variables")]
     [SerializeField] float movementSpeed;
-    [SerializeField] float detectionRadius, attackRadius;
-    [SerializeField] float wanderingRadius;
+    [SerializeField] float detectionRadius, stopRadius, attackRadius;
     [SerializeField] EnemyAIState state;
+    [SerializeField] float attackCooldown;
+    float attackTimer;
 
-    [SerializeField] float curTimer, minWaitingTime, maxWaitingTime;
+    [Header("Wandering")]
+    float curTimer;
+    [SerializeField] float minWaitingTime, maxWaitingTime;
+    [SerializeField] float wanderingRadius;
     Vector2 startPos, wanderingDestination;
+
     Animator anim;
     Transform player;
 
@@ -53,12 +58,12 @@ public class EnemyMovement : MonoBehaviour
                 break;
             case EnemyAIState.chasing:
                 HandleChasingState();
-                WalkTowards(player.position);
                 break;
             case EnemyAIState.attacking:
                 HandleAttackingState();
                 break;
         }
+        attackTimer -= Time.deltaTime;
     }
     void HandleIdleState()
     {
@@ -94,7 +99,18 @@ public class EnemyMovement : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) < attackRadius)
         {
             state = EnemyAIState.attacking;
+
+            if (Vector2.Distance(transform.position, player.position) < stopRadius)
+            {
+                if (attackTimer > 0)
+                    state = EnemyAIState.idle;
+                return;
+            }
         }
+        
+
+        WalkTowards(player.position);
+
         Vector2 playerDir = player.position - transform.position;
         anim.SetFloat("Horizontal", playerDir.x);
         anim.SetFloat("Vertical", playerDir.y);
@@ -104,6 +120,13 @@ public class EnemyMovement : MonoBehaviour
         //attack sfx
         goblinAttackInstance.start();
         // start anim
+        if (attackTimer > 0)
+        {
+            state = EnemyAIState.chasing;
+            return;
+        }
+
+        attackTimer = attackCooldown;
         anim.SetBool("Walking", false);
         anim.SetBool("Attacking", true);
 
@@ -131,6 +154,11 @@ public class EnemyMovement : MonoBehaviour
 
         return Random.Range(0, wanderingRadius) * destination;
     }
+    void Event_AttackDone()
+    {
+        state = EnemyAIState.idle;
+        anim.SetBool("Attacking", false);
+    }
     enum EnemyAIState
     {
         idle,
@@ -147,6 +175,9 @@ public class EnemyMovement : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
         
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRadius);
+        Gizmos.DrawWireSphere(new Vector3(
+            transform.position.x,
+            transform.position.y
+            + 0.5f), attackRadius);
     }
 }

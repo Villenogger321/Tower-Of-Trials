@@ -11,13 +11,6 @@ public class Health : MonoBehaviour
     public Action OnDeath;
     public Action<int, DamageType> OnDamage;
     private List<DamageOverTime> damageOverTimeList = new();
-
-    private FMOD.Studio.EventInstance takeDamageInstance;
-
-
-
-
-
     public void TakeDamage(int _damage, DamageType _type = DamageType.physical)
     {
         health -= _damage;
@@ -32,7 +25,6 @@ public class Health : MonoBehaviour
     public void TakeDamage(DamageCollection[] _damageCollection)
     {
         ////////////////////////// take damage sfx
-        takeDamageInstance.start();
 
         int totalDamage = 0;
         foreach (var item in _damageCollection)
@@ -40,6 +32,11 @@ public class Health : MonoBehaviour
             totalDamage += item.Damage; // multiply with damage type resistance
             DisplayWorldText.DisplayText(transform, item.Damage.ToString(), Color.red);
         }
+        if (transform.CompareTag("Player"))
+            PlayerTakeDamage(totalDamage);
+
+        if (transform.CompareTag("Enemy"))
+            EnemyTakeDamage(totalDamage);
 
         health -= totalDamage;
         if (health <= 0)
@@ -62,17 +59,10 @@ public class Health : MonoBehaviour
     {
         OnDeath -= _subscribee;
     }
-    [ContextMenu("damage")]
-    private void TempTest()
-    {
-        ApplyNewDamageOverTime(new DamageOverTime(10, 5, DamageType.fire));
-    }
     private void Start()
     {
         health = maxHealth;    
         TickManager.Subscribe(OnTick);
-
-        takeDamageInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/player/Damage");
     }
     private void OnTick()
     {
@@ -82,6 +72,28 @@ public class Health : MonoBehaviour
     {
         TickManager.UnSubscribe(OnTick);
     }
+
+    void PlayerTakeDamage(float _totalDamage)
+    {
+        // player damage sound
+        if (health - _totalDamage <= 0)
+        {
+            // player death sound
+        }
+        // if you don't want damage & death sound to stack when dying you'll just
+        // write else here :-)
+    }
+    void EnemyTakeDamage(float _totalDamage)
+    {
+        // enemy damage sound
+        if (health - _totalDamage <= 0)
+        {
+            // enemy death sound
+        }
+        // if you don't want damage & death sound to stack when dying you'll just
+        // write else here :-)
+    }
+
     private void DealDamageOverTime()
     {
         if (damageOverTimeList.Count <= 0)

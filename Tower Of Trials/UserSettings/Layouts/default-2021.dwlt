@@ -19,7 +19,11 @@ MonoBehaviour:
     width: 1920
     height: 975
   m_ShowMode: 4
+<<<<<<< HEAD
   m_Title: Scene
+=======
+  m_Title: Inspector
+>>>>>>> Ville
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,10 +124,14 @@ MonoBehaviour:
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 22
 =======
   controlID: 80
 >>>>>>> irina
+=======
+  controlID: 99
+>>>>>>> Ville
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,10 +157,14 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 23
 =======
   controlID: 81
 >>>>>>> irina
+=======
+  controlID: 100
+>>>>>>> Ville
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -206,10 +218,14 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 74
 =======
   controlID: 28
 >>>>>>> irina
+=======
+  controlID: 52
+>>>>>>> Ville
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -290,7 +306,11 @@ MonoBehaviour:
     y: 0
     width: 353
 <<<<<<< HEAD
+<<<<<<< HEAD
     height: 925
+=======
+    height: 947
+>>>>>>> Ville
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
@@ -374,6 +394,7 @@ MonoBehaviour:
     - {fileID: 8069814988400453354, guid: 6b5c7ba6bf8b6de4595b17ea6eacb400, type: 2}
     - {fileID: 8069814988400453354, guid: c974b69f7ce7a4d4bb26830377fe2a54, type: 2}
     - {fileID: -7590498064835922844, guid: 9e8f8c4debf68a347af42eb91b3b818b, type: 2}
+<<<<<<< HEAD
     - {fileID: -1369942073634667316, guid: 5287b1061010aa54bb9933eed4301a24, type: 2}
 <<<<<<< HEAD
     - {fileID: 6253479057587039000, guid: c6b09483f5cceb94294f2e918f80d67e, type: 2}
@@ -381,6 +402,9 @@ MonoBehaviour:
 =======
     - {fileID: 8069814988400453354, guid: 6353db95762034041840e712cdf51ff1, type: 2}
 >>>>>>> irina
+=======
+    - {fileID: -6344102732633753456, guid: 7520999a7441da84e95e1335e3f153b7, type: 2}
+>>>>>>> Ville
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -462,6 +486,7 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+<<<<<<< HEAD
     - e00: 1
       e01: 0
       e02: 0
@@ -512,6 +537,12 @@ MonoBehaviour:
   m_BreadCrumbs:
   - m_Target: {fileID: 8069814988400453354, guid: 6353db95762034041840e712cdf51ff1, type: 2}
 >>>>>>> irina
+=======
+  m_PreviewAnimator: {fileID: 0}
+  m_AnimatorController: {fileID: 9100000, guid: 7520999a7441da84e95e1335e3f153b7, type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: -6344102732633753456, guid: 7520999a7441da84e95e1335e3f153b7, type: 2}
+>>>>>>> Ville
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -585,7 +616,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -864,6 +895,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 38.284775, y: -6.212072, z: -0.47084293}
     speed: 2
     m_Value: {x: 38.284153, y: -6.1737375, z: -0.47132736}
@@ -872,6 +904,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 5.6322026, y: -1.1578853, z: -0.862688}
 >>>>>>> irina
+=======
+    m_Target: {x: -5.2325644, y: -1.9078403, z: -0.01940585}
+    speed: 2
+    m_Value: {x: -5.2325644, y: -1.9078403, z: -0.01940585}
+>>>>>>> Ville
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -923,6 +960,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 32.24416
     speed: 2
     m_Value: 32.292603
@@ -931,6 +969,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 15.466279
 >>>>>>> irina
+=======
+    m_Target: 3.5524495
+    speed: 2
+    m_Value: 3.5524495
+>>>>>>> Ville
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -985,6 +1028,7 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
+<<<<<<< HEAD
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
       m_SelectedIDs: 
@@ -995,6 +1039,12 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: b2e7ffff52edffff4af5ffff0afbffff
 >>>>>>> irina
+=======
+      scrollPos: {x: 0, y: 37}
+      m_SelectedIDs: de76feff
+      m_LastClickedID: -100642
+      m_ExpandedIDs: 4c3bffffc03fffff3c45ffff8a48ffffd250ffff5a5dffff6e5effff7e62ffff2664ffff9e65ffff7867ffffbe68ffffd669ffff1e6bffff2276ffff9e77ffff8286ffff8486ffffcc91ffff469cffffaa9dffff2aa3ffff9ca4ffffeca7ffffeeaeffffb2c3ffff5ed0ffff80e7ffff6cebffffb6eeffffdaf1ffff0afbffff36af0000fcaf000026b10000d2d3000048d70000fc7001002e7101001e730100
+>>>>>>> Ville
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1060,23 +1110,32 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets
 =======
     - Assets/Scenes/rooms 1
 >>>>>>> irina
+=======
+    - Assets/Scripts
+>>>>>>> Ville
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 75
   m_LastFolders:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Assets
+=======
+  - Assets/Scripts
+>>>>>>> Ville
   m_LastFoldersGridSize: 82
   m_LastProjectPath: /Users/christerfant/Documents/GitHub/Tower-Of-Trials/Tower Of
     Trials
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 26}
     m_SelectedIDs: 107d0000
     m_LastClickedID: 32016
@@ -1093,6 +1152,12 @@ MonoBehaviour:
     m_LastClickedID: 33200
     m_ExpandedIDs: 000000006481000066810000688100006a8100006c8100006e810000708100007281000000ca9a3b
 >>>>>>> irina
+=======
+    scrollPos: {x: 0, y: 307}
+    m_SelectedIDs: 307a0000
+    m_LastClickedID: 31280
+    m_ExpandedIDs: 0000000030780000327800003478000036780000387800003a7800003c7800003e78000040780000427800004478000046780000487800002c7a00002e7a0000307a000000ca9a3bffffff7f
+>>>>>>> Ville
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1121,10 +1186,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000107d0000
 =======
     m_ExpandedIDs: 000000006481000066810000688100006a8100006c8100006e8100007081000072810000
 >>>>>>> irina
+=======
+    m_ExpandedIDs: 0000000030780000327800003478000036780000387800003a7800003c7800003e7800004078000042780000447800004678000048780000
+>>>>>>> Ville
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1153,10 +1222,14 @@ MonoBehaviour:
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c623000050970000d46d00003a700000806e0000967000002aab00002481000088fc0000d8d20000ac780000
 =======
     m_ExpandedInstanceIDs: c623000050970000d46d00003a700000806e0000967000002aab00002481000088fc0000d8d20000ac780000347700002c770000
 >>>>>>> irina
+=======
+    m_ExpandedInstanceIDs: c623000050970000d46d00003a700000806e0000967000002aab00002481000088fc0000d8d20000ac78000026d20000
+>>>>>>> Ville
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1180,8 +1253,13 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
+<<<<<<< HEAD
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 75
+=======
+    m_ScrollPosition: {x: 0, y: 80.5}
+    m_GridSize: 82
+>>>>>>> Ville
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
 --- !u!114 &18
@@ -1243,7 +1321,11 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LastSelectedObjectID: 86996
+=======
+  m_LastSelectedObjectID: -100642
+>>>>>>> Ville
 --- !u!114 &19
 =======
   m_LastSelectedObjectID: -177270

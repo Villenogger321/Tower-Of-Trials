@@ -231,7 +231,6 @@ GameObject:
   - component: {fileID: 5230449592273945532}
   - component: {fileID: 5230449592273945533}
   - component: {fileID: 5230449592273945530}
-  - component: {fileID: 5230449592273945531}
   - component: {fileID: 5230449592273945513}
   m_Layer: 3
   m_Name: Player
@@ -536,20 +535,6 @@ MonoBehaviour:
   trinketTooltip: {fileID: 0}
   trinketTooltipPrefab: {fileID: 7850692760716407166, guid: a23cb9f63ad38fa44aac2e57100e6098, type: 3}
   tooltipOffset: {x: 0, y: 0.5, z: 0}
---- !u!114 &5230449592273945531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5230449592273945528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b854e6e026137945af973e1ed62c76c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeOnMove: 1
-  layerOrder: 0
 --- !u!114 &5230449592273945513
 MonoBehaviour:
   m_ObjectHideFlags: 0
