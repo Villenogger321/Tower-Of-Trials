@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     static bool gameIsPaused = false;
-    bool usingMenu = false;
 
     [Header("References")]
 
@@ -78,7 +77,6 @@ public class UIManager : MonoBehaviour
                                                    //button click noise
         inventoryToMenuObj.SetActive(true);
         inventoryToMenu.SetBool("inventoryToMenu", true);
-        usingMenu = true;
 
         ////////////////////////// page turn sfx
         await Task.Delay(380);
@@ -97,7 +95,6 @@ public class UIManager : MonoBehaviour
 
         inventoryToMenu.SetBool("inventoryToMenu", false);
         inventoryToMenuObj.SetActive(false);
-        usingMenu = false;
 
         gameIsPaused = true;
     }
@@ -108,7 +105,6 @@ public class UIManager : MonoBehaviour
         inventoryUI.UpdateInventory();
         menuToInventoryObj.SetActive(true);
         menuToInventory.SetBool("menuToInventory", true);
-        usingMenu = true;
         ////////////////////////// page turn sfx
         await Task.Delay(380);
         menuToInventory.SetBool("menuToInventory", false);
@@ -125,7 +121,6 @@ public class UIManager : MonoBehaviour
 		inventoryUI.UpdateInventory();
 
         menuToInventoryObj.SetActive(false);
-        usingMenu = false;
 
         Time.timeScale = 0f;
         gameIsPaused = true;
@@ -136,7 +131,7 @@ public class UIManager : MonoBehaviour
                                                        //button click noise
         menuToSettingsObj.SetActive(true);
         menuToSettings.SetBool("menuToSettings", true);
-        usingMenu = true;
+
         ////////////////////////// page turn sfx
         await Task.Delay(380);
         OpenSettings();
