@@ -11,6 +11,20 @@ public class Health : MonoBehaviour
     public Action OnDeath;
     public Action<int, DamageType> OnDamage;
     private List<DamageOverTime> damageOverTimeList = new();
+
+    #region FMOD variables
+
+    //Player
+    private FMOD.Studio.EventInstance playerDamageInstance;
+    private FMOD.Studio.EventInstance playerDeathInstance;
+
+    //goblin
+    private FMOD.Studio.EventInstance goblinDamageInstance;
+    private FMOD.Studio.EventInstance goblinDeathInstance;
+
+    #endregion
+
+
     public void TakeDamage(int _damage, DamageType _type = DamageType.physical)
     {
         health -= _damage;
@@ -63,6 +77,16 @@ public class Health : MonoBehaviour
     {
         health = maxHealth;    
         TickManager.Subscribe(OnTick);
+
+        #region FMOD var assignment
+
+        playerDamageInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/player/Damage");
+        playerDeathInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/player/Death");
+
+        goblinDamageInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinDamage");
+        goblinDeathInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinDeath");
+
+        #endregion
     }
     private void OnTick()
     {
@@ -75,20 +99,28 @@ public class Health : MonoBehaviour
 
     void PlayerTakeDamage(float _totalDamage)
     {
-        // player damage sound
+
         if (health - _totalDamage <= 0)
         {
-            // player death sound
+            playerDeathInstance.start(); // player death sound
+        }
+        else
+        {
+            playerDamageInstance.start(); // player damage sound
         }
         // if you don't want damage & death sound to stack when dying you'll just
         // write else here :-)
     }
     void EnemyTakeDamage(float _totalDamage)
     {
-        // enemy damage sound
+        
         if (health - _totalDamage <= 0)
         {
-            // enemy death sound
+            goblinDeathInstance.start(); // enemy death sound
+        }
+        else
+        {
+            goblinDamageInstance.start(); // enemy damage sound
         }
         // if you don't want damage & death sound to stack when dying you'll just
         // write else here :-)
