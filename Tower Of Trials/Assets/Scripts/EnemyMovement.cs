@@ -24,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
 
     private FMOD.Studio.EventInstance goblinWalkInstance;
     private FMOD.Studio.EventInstance goblinIdleInstance;
-    private FMOD.Studio.EventInstance goblinAttackInstance;
+    private FMOD.Studio.EventInstance goblinAttackSwooshInstance;
 
     void Start()
     {
@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
         startPos = transform.position;
 
         goblinWalkInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinSteps");
-        goblinAttackInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinAttack");
+        goblinAttackSwooshInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinAttackSwoosh");
         goblinIdleInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemies/GoblinTalk");
     }
     void Awake()
@@ -118,7 +118,7 @@ public class EnemyMovement : MonoBehaviour
     void HandleAttackingState()
     {
         //attack sfx
-        goblinAttackInstance.start();
+        goblinAttackSwooshInstance.start();
         // start anim
         if (attackTimer > 0)
         {

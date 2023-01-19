@@ -515,33 +515,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 14500
---- !u!114 &-920218394045216835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/enemies/GoblinAttack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/enemies/GoblinAttack
-  Guid:
-    Data1: 168276148
-    Data2: 1264188229
-    Data3: 1488579234
-    Data4: 2019843626
-  Banks:
-  - {fileID: -918181989945854148}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2113
 --- !u!114 &-918181989945854148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,7 +530,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/sfx.bank
   Name: sfx
   StudioPath: bank:/sfx
-  lastModified: 638097356485579213
+  lastModified: 638097362792066706
   FileSizes: []
   Exists: 1
 --- !u!114 &-748493925135795874
@@ -646,7 +619,6 @@ MonoBehaviour:
   - {fileID: 3660153673474279725}
   - {fileID: -3689464832083514822}
   - {fileID: -1539045674489944968}
-  - {fileID: -920218394045216835}
   - {fileID: -7639004751044020124}
   - {fileID: -2416299486817956991}
   - {fileID: 3797709234488940226}
@@ -665,12 +637,14 @@ MonoBehaviour:
   - {fileID: 2397631446729384143}
   - {fileID: 5924431430478707501}
   - {fileID: 8696216238060557079}
+  - {fileID: 3915731601649226749}
+  - {fileID: 1678107330879961476}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6429058889363745777}
   StringsBanks:
   - {fileID: 7386310804097186947}
-  cacheTime: 638097356485949558
+  cacheTime: 638097362792377277
   cacheVersion: 131601
 --- !u!114 &519987665299093342
 MonoBehaviour:
@@ -768,9 +742,36 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/ui.bank
   Name: ui
   StudioPath: bank:/ui
-  lastModified: 638097356485949558
+  lastModified: 638097362792377277
   FileSizes: []
   Exists: 1
+--- !u!114 &1678107330879961476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/enemies/GoblinAttackSwoosh
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/enemies/GoblinAttackSwoosh
+  Guid:
+    Data1: 168276148
+    Data2: 1264188229
+    Data3: 1488579234
+    Data4: 2019843626
+  Banks:
+  - {fileID: -918181989945854148}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1380
 --- !u!114 &2114324697204049645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,6 +882,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 76595
+--- !u!114 &3915731601649226749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/enemies/GoblinAttackHit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/enemies/GoblinAttackHit
+  Guid:
+    Data1: -1344746088
+    Data2: 1290866280
+    Data3: -600226136
+    Data4: 1411670017
+  Banks:
+  - {fileID: -918181989945854148}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1988
 --- !u!114 &4998819846601691401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,7 +978,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638097356483201818
+  lastModified: 638097362789645965
   FileSizes: []
   Exists: 1
 --- !u!114 &5924431430478707501
@@ -996,7 +1024,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638097356481688266
+  lastModified: 638097362788407287
   FileSizes: []
   Exists: 1
 --- !u!114 &7142377720428538066
@@ -1068,10 +1096,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638097356481703719
+  lastModified: 638097362788425086
   FileSizes:
   - Name: 
-    Value: 3356
+    Value: 3408
   Exists: 1
 --- !u!114 &7711701680744587386
 MonoBehaviour:
