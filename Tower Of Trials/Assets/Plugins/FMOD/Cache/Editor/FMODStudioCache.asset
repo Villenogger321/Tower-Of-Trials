@@ -207,7 +207,7 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
     data1: 2504708705
     data2: 2510804779
@@ -530,7 +530,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/sfx.bank
   Name: sfx
   StudioPath: bank:/sfx
-  lastModified: 638097408996504620
+  lastModified: 638097540563741730
   FileSizes: []
   Exists: 1
 --- !u!114 &-748493925135795874
@@ -645,7 +645,7 @@ MonoBehaviour:
   - {fileID: 6429058889363745777}
   StringsBanks:
   - {fileID: 7386310804097186947}
-  cacheTime: 638097408996825582
+  cacheTime: 638097540564081352
   cacheVersion: 131601
 --- !u!114 &519987665299093342
 MonoBehaviour:
@@ -743,7 +743,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/ui.bank
   Name: ui
   StudioPath: bank:/ui
-  lastModified: 638097408996825582
+  lastModified: 638097540564081352
   FileSizes: []
   Exists: 1
 --- !u!114 &1619202516760485488
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638097408994088982
+  lastModified: 638097540561395119
   FileSizes: []
   Exists: 1
 --- !u!114 &5924431430478707501
@@ -1052,7 +1052,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638097408993066067
+  lastModified: 638097540559963081
   FileSizes: []
   Exists: 1
 --- !u!114 &7142377720428538066
@@ -1124,10 +1124,10 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638097408993077793
+  lastModified: 638097540559988686
   FileSizes:
   - Name: 
-    Value: 3444
+    Value: 3492
   Exists: 1
 --- !u!114 &7711701680744587386
 MonoBehaviour:

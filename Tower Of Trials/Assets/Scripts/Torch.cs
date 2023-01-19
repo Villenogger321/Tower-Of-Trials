@@ -17,7 +17,7 @@ public class Torch : MonoBehaviour
 
     void Update()
     {
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(torchLitInstance, GetComponent<Transform>(), GetComponent<Rigidbody2D>());
+
     }
 
     public void LightTorch()

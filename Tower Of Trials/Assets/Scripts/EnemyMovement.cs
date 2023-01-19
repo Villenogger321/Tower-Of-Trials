@@ -43,7 +43,6 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
 
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(goblinWalkInstance, GetComponent<Transform>(), GetComponent<Rigidbody2D>()); //FMOD
 
         switch (state)
         {
