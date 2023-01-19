@@ -29,7 +29,6 @@ public class DisplayWorldText : MonoBehaviour
     }
     private void Start()
     {
-        DisplayText(transform, "hello");
     }
     private void Awake()
     {
