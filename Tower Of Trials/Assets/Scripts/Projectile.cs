@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     private Action<Health> onHitTrigger;
     private bool playerOwned;
+    public GameObject particles;
 
     void OnTriggerEnter2D(Collider2D _col)
     {
@@ -17,6 +18,7 @@ public class Projectile : MonoBehaviour
         {
             onHitTrigger.Invoke(_health);
         }
+        Instantiate(particles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
     // assign on hit methods to action
