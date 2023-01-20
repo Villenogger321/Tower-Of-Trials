@@ -21,6 +21,10 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance;
     Action levelStart;
 
+    private FMOD.Studio.EventInstance forestMusicInstance;
+    private FMOD.Studio.EventInstance forestAmbienceInstance;
+
+
     void Awake()
     {
         if (Instance == null)
@@ -33,7 +37,11 @@ public class LevelManager : MonoBehaviour
     }
     void Start()
     {
-        
+
+        //FMOD
+        forestMusicInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Forest/Music");
+        forestAmbienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/env/Lvl_1_ambience");
+
     }
     public void LoadLevel()
     {
@@ -42,6 +50,11 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(Random.Range(1, SceneManager.sceneCountInBuildSettings));
 
         // spawn everything
+
+        //start forest music/ambience
+        forestMusicInstance.start();
+        forestAmbienceInstance.start();
+
     }
     public GameObject GetRandomLootSpawnable()
     {

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -7,9 +8,17 @@ public class Weapon : MonoBehaviour
     public List<OnHitBase> OnHit;
 
     public WeaponBaseInfo WeaponInfo;
+    float fireRateTimer;
     [SerializeField] Transform firePos;
 
     [SerializeField] Transform weaponHolder;
+
+
+    #region FMOD var
+    [Header("FMOD")]
+    private FMOD.Studio.EventInstance attackInstance;
+    #endregion
+
     public void FireProjectile()
     {
         Projectile proj =  Instantiate(WeaponInfo.Projectile);
@@ -41,14 +50,25 @@ public class Weapon : MonoBehaviour
     }
     void OnFire()
     {
-        // implemenet cooldown :-)
+        if (fireRateTimer > 0)
+            return;
+        fireRateTimer = WeaponInfo.FireRate;
 
         ////////////////////////// Shooting sfx
+        attackInstance.start();  //FMOD
+
         FireProjectile();
+        
     }
     void Start()
     {
         OnEquip();
+
+        attackInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/player/Attack"); //fmod
+    }
+    void Update()
+    {
+        fireRateTimer -= Time.deltaTime;
     }
     void OnEquip()
     {

@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Torch : MonoBehaviour
 {
+    private FMOD.Studio.EventInstance torchLitInstance; //FMOD
+
     Animator anim;
     void Start()
     {
         anim = GetComponent<Animator>();
+
+        torchLitInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/env/TorchLightingUp"); //FMOD
+        
+    }
+
+    void Update()
+    {
+
     }
 
     public void LightTorch()
     {
-        print("lit");
         anim.SetBool("Lit", true);
+
+        torchLitInstance.start(); //FMOD
     }
 }
