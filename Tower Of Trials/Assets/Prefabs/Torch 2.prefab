@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8770368618693243179}
   - component: {fileID: 3123268156305806147}
   - component: {fileID: 3123268156305806146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Torch 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 189566000, guid: dd9c8395313cd844485aa4be47cf4f28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -156,7 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5128793337213909613}
   - component: {fileID: 1496752967101280649}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

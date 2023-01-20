@@ -78,12 +78,12 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.541
+  m_FalloffIntensity: 0
   m_Color: {r: 1, g: 0.96273226, b: 0.7877358, a: 1}
-  m_Intensity: 1.48
+  m_Intensity: 1.85
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: b1a1140a00000000574e4ae7b97c0d34
+  m_ApplyToSortingLayers: b1a1140a00000000574e4ae7374094eb4580b9dc85d9bbe3
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 18.7
+  m_PointLightOuterRadius: 10.19
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -231,7 +231,6 @@ GameObject:
   - component: {fileID: 5230449592273945532}
   - component: {fileID: 5230449592273945533}
   - component: {fileID: 5230449592273945530}
-  - component: {fileID: 5230449592273945531}
   - component: {fileID: 5230449592273945513}
   m_Layer: 3
   m_Name: Player
@@ -536,20 +535,6 @@ MonoBehaviour:
   trinketTooltip: {fileID: 0}
   trinketTooltipPrefab: {fileID: 7850692760716407166, guid: a23cb9f63ad38fa44aac2e57100e6098, type: 3}
   tooltipOffset: {x: 0, y: 0.5, z: 0}
---- !u!114 &5230449592273945531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5230449592273945528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b854e6e026137945af973e1ed62c76c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeOnMove: 1
-  layerOrder: 0
 --- !u!114 &5230449592273945513
 MonoBehaviour:
   m_ObjectHideFlags: 0

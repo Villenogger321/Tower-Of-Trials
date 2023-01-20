@@ -9900,26 +9900,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5230449591862791598, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230449591862791598, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[3]
-      value: -342605769
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230449591862791598, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[4]
-      value: -591822779
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230449591862791598, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[5]
-      value: -474228347
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230449592273945513, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5230449592273945527, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9968,24 +9948,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5230449592273945530, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230449592273945531, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230449592273945532, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5230449592273945535, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5230449592273945531, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
 --- !u!1001 &518479336
 PrefabInstance:

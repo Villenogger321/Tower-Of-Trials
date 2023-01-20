@@ -16,7 +16,7 @@ MonoBehaviour:
   onHit: []
   Damage: 10
   FireRate: 1
-  BulletSpeed: 150
+  BulletSpeed: 175
   Lifetime: 5
   Projectile: {fileID: 5581730708830003414, guid: 5cbc70c887c521d4e905ebcf8bacad1f, type: 3}
   ProjectileSprite: {fileID: 0}

@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e421478ba64f6e44fa313fa0a4dc9512, type: 2}
   Damage: 25
   FireRate: 1
-  BulletSpeed: 100
+  BulletSpeed: 125
   Lifetime: 5
   Projectile: {fileID: 5691259603536801768, guid: c7fe2de17a45af543ab900c6883dee54, type: 3}
   ProjectileSprite: {fileID: 0}
