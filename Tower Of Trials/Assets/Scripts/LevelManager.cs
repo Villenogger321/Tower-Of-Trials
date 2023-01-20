@@ -24,6 +24,10 @@ public class LevelManager : MonoBehaviour
     private FMOD.Studio.EventInstance forestMusicInstance;
     private FMOD.Studio.EventInstance forestAmbienceInstance;
 
+    private FMOD.Studio.EventInstance tutorialMusicInstance;
+    private FMOD.Studio.EventInstance tutorialAmbienceInstance;
+
+    private FMOD.Studio.EventInstance footstepInstance;
 
     void Awake()
     {
@@ -39,12 +43,20 @@ public class LevelManager : MonoBehaviour
         //FMOD
         forestMusicInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Forest/Music");
         forestAmbienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/env/Lvl_1_ambience");
+        tutorialMusicInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Tutorial/Music");
+        tutorialAmbienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/env/Lvl_0_ambience");
+
+        footstepInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/player/Footsteps");
 
     }
     public void LoadTutorial()
     {
         levelStart?.Invoke();
         SceneManager.LoadScene(1);
+
+        tutorialMusicInstance.start();
+        tutorialAmbienceInstance.start();
+        footstepInstance.setParameterByName("Type", 0);
     }
     public void LoadLevel()
     {
@@ -57,6 +69,8 @@ public class LevelManager : MonoBehaviour
         //start forest music/ambience
         forestMusicInstance.start();
         forestAmbienceInstance.start();
+
+        footstepInstance.setParameterByName("Type", 1);
     }
     void SaveEnemyPoints()
     {
