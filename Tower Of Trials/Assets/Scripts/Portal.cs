@@ -40,7 +40,6 @@ public class Portal : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D _col)
     {
-        print("hit");
         if (!isOpen)
             return;
 

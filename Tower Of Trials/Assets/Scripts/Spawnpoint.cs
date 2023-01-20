@@ -32,6 +32,7 @@ public class Spawnpoint : MonoBehaviour
 
             case SpawnType.loot:
                 spawnObject = levelManager.GetRandomLootSpawnable();
+                spawnChance = 100;
                 radius = 0;
                 Spawn();
                 break;

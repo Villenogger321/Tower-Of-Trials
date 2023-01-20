@@ -6429,7 +6429,8 @@ MonoBehaviour:
   spawnpoints: []
   lootSpawnables:
   - {fileID: 3344120622682958420, guid: 64028122e93825d40bd12d255a4eea45, type: 3}
-  obstacleSpawnables: []
+  obstacleSpawnables:
+  - {fileID: 7166245256515759420, guid: 00fc68d87ff43854bb54de7deff1ab0e, type: 3}
 --- !u!114 &881508401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12348,7 +12349,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1801224377}
   - component: {fileID: 1801224376}
-  - component: {fileID: 1801224375}
   - component: {fileID: 1801224378}
   m_Layer: 0
   m_Name: Main Camera
@@ -12357,14 +12357,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1801224375
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801224374}
-  m_Enabled: 1
 --- !u!20 &1801224376
 Camera:
   m_ObjectHideFlags: 0

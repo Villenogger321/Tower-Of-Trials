@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
     private FMOD.Studio.EventInstance goblinWalkInstance;
     private FMOD.Studio.EventInstance goblinIdleInstance;
     private FMOD.Studio.EventInstance goblinAttackSwooshInstance;
-
+    
     void Start()
     {
         player = PlayerStats.Player;
@@ -152,6 +152,10 @@ public class EnemyMovement : MonoBehaviour
         destination.Normalize();
 
         return Random.Range(0, wanderingRadius) * destination;
+    }
+    public float GetAttackRange()
+    {
+        return attackRadius;
     }
     void Event_AttackDone()
     {
