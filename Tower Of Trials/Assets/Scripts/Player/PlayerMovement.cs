@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         footstepInstance.start();
+        LevelManager.Subscribe(StopFootsteps);
     }
 
     void Update()
@@ -36,7 +37,11 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(Mathf.Abs(movement.x) + Mathf.Abs(movement.y));
 
         footstepInstance.setParameterByName("isMoving", Mathf.Abs(movement.x) + Mathf.Abs(movement.y));
-
+    }
+    void StopFootsteps()
+    {
+        footstepInstance.setParameterByName("isMoving", 0);
+        footstepInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
     void Movement()
     {

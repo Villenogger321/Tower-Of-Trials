@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trinket
   - Enemy
+  - Spawnpoint
   layers:
   - Default
   - TransparentFX

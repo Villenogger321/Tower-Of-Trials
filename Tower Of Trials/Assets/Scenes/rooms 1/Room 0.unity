@@ -24630,6 +24630,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5230449592273945534, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
+      propertyPath: movementSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
 --- !u!4 &519979610 stripped
@@ -36905,7 +36909,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8323040675111143853, guid: 01926a927f514254d961cca80a5f5b18, type: 3}
       propertyPath: m_Name
-      value: PortalExitOn
+      value: Portal
       objectReference: {fileID: 0}
     - target: {fileID: 8323040675111143854, guid: 01926a927f514254d961cca80a5f5b18, type: 3}
       propertyPath: m_RootOrder

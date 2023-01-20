@@ -7,7 +7,7 @@ public class Portal : MonoBehaviour
 {
     Animator anim;
     bool isOpen;
-
+    [SerializeField] bool startOpen;
     #region FMOD
 
     private FMOD.Studio.EventInstance portalInstance;
@@ -27,17 +27,20 @@ public class Portal : MonoBehaviour
     void Start()
     {
         EnemySpawner.SubscribeToGuardianKilled(OpenPortal);
+
+        if (startOpen)
+            OpenPortal();
     }
     void OpenPortal()
     {
         portalInstance.start(); //FMOD sfx
-
-        anim.SetTrigger("OpenPortal");
+        anim.SetBool("OpenPortal", true);
         isOpen = true;
     }
 
     void OnTriggerEnter2D(Collider2D _col)
     {
+        print("hit");
         if (!isOpen)
             return;
 

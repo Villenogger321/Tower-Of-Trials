@@ -39,6 +39,7 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             OnDeath?.Invoke();
+            Destroy(gameObject);
             return;
         }
         OnDamage?.Invoke(health / maxHealth, _type);
@@ -60,6 +61,7 @@ public class Health : MonoBehaviour
         {
             OnDeath?.Invoke();
             DisplayWorldText.DisplayText(transform, "L", Color.red);
+            Destroy(gameObject);
             return;
         }
 
@@ -115,9 +117,7 @@ public class Health : MonoBehaviour
         // write else here :-)
     }
     void EnemyTakeDamage(float _damage)
-    {
-        print("test");
-        
+    {        
         if (health - _damage <= 0)
         {
             goblinDeathInstance.start(); // enemy death sound

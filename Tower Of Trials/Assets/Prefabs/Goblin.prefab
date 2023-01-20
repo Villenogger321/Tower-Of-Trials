@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1395942901956568788}
   - component: {fileID: 1395942901956568790}
   - component: {fileID: 1011993971}
+  - component: {fileID: 3127741019905656988}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -164,8 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562214a590792c941894f10cf5729c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
+  health: 30
+  maxHealth: 30
 --- !u!114 &1395942901956568790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,3 +200,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f48f3547d0e96642bdbe1b46fd96ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3127741019905656988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395942901956568783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc6a03ff9bfa234daf224123afb1c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnCost: 100
+  killReward: 150

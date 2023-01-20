@@ -231,7 +231,6 @@ public class UIManager : MonoBehaviour
     }
     void AssignPlayer()
     { 
-        print("assigned");
         player = GameObject.FindGameObjectWithTag("Player");
         playerInput = player.GetComponent<PlayerInput>();
         trinketInventory = player.GetComponent<TrinketInventory>();

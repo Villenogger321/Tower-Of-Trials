@@ -16,23 +16,18 @@ public class Spawnpoint : MonoBehaviour
     [SerializeField] int spawnChance = 50;
 
     LevelManager levelManager;
-    
     void Spawn()
     {
         if (Random.Range(0, 100) > spawnChance)
             return;
         spawnedObject = Instantiate(spawnObject, transform.position, Quaternion.identity);
-    
-                
     }
     void SpawnSetup()
     {
         switch (spawnType)
         {
             case SpawnType.enemy:
-                // select enemy to spawn
                 spawnChance = 100;
-                Spawn();
                 break;
 
             case SpawnType.loot:
@@ -50,10 +45,17 @@ public class Spawnpoint : MonoBehaviour
         }
     }
     
+    void Awake()
+    {
+        levelManager = LevelManager.Instance;
+        levelManager.spawnpoints.Add(this);
+
+        if (spawnType == SpawnType.enemy)
+            EnemySpawner.enemySpawner.enemySpawnpoints.Add(this);
+    }
     void Start()
     {
-        LevelManager.Subscribe(SpawnSetup);
-        levelManager = LevelManager.Instance;
+        SpawnSetup();
     }
     void OnDrawGizmosSelected()
     {
