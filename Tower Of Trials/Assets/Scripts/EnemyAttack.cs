@@ -21,13 +21,11 @@ public class EnemyAttack : MonoBehaviour
     }
     void Event_Attack()
     {
-        print("tried hit");
         if (Vector2.Distance(
             transform.position,
             PlayerStats.Player.position) > enemyMovement.GetAttackRange())
             return;
-        print("hit");
-        // hit player
+
         goblinAttackHitInstance.start();
         Health health = PlayerStats.Player.GetComponent<Health>();
 

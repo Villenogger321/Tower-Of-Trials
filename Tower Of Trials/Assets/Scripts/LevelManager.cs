@@ -45,7 +45,6 @@ public class LevelManager : MonoBehaviour
         forestAmbienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/env/Lvl_1_ambience");
         tutorialMusicInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Tutorial/Music");
         tutorialAmbienceInstance = FMODUnity.RuntimeManager.CreateInstance("event:/env/Lvl_0_ambience");
-
         footstepInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/player/Footsteps");
 
     }
@@ -66,6 +65,7 @@ public class LevelManager : MonoBehaviour
 
         // spawn everything
 
+        
         //start forest music/ambience
         forestMusicInstance.start();
         forestAmbienceInstance.start();

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
@@ -104,10 +105,11 @@ public class Health : MonoBehaviour
 
     void PlayerTakeDamage(float _damage)
     {
-        
+        HealthBar.Instance.SetHealth(health);
         if (health - _damage <= 0)
         {
             playerDeathInstance.start(); // player death sound
+            SceneManager.LoadScene(0);
         }
         else
         {

@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class EnemySpawner : MonoBehaviour
 {
 
-    Action guardianKilled;
+    public Action guardianKilled;
     [SerializeField] GameObject enemy;
     public static EnemySpawner enemySpawner;
     public List<Spawnpoint> enemySpawnpoints;

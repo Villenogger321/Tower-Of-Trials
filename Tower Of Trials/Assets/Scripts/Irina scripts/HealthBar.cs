@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ public class HealthBar : MonoBehaviour
 
     [SerializeField] Image flaskVisual;
     [SerializeField] Image flaskVisualBack;
+    public static HealthBar Instance;
 
     public void SetHealth(float newHpValue)
     {
@@ -29,12 +31,9 @@ public class HealthBar : MonoBehaviour
 
         target.anchoredPosition = new Vector2(target.anchoredPosition.x, newPos);
     }
-
-    public float currentHp;
-    [ContextMenu("SetHp")]
-    public void SetHp()
+    void Start()
     {
-        SetHealth(currentHp);
+        Instance = this;
     }
 
     internal void SetMaxHealth(int newMaxHealth)
