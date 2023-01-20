@@ -6424,8 +6424,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Environment: {fileID: 0}
   floor: 1
-  startEnemyPoints: 100
-  EnemyPoints: 100
+  startEnemyPoints: 400
+  EnemyPoints: 400
   spawnpoints: []
   lootSpawnables:
   - {fileID: 3344120622682958420, guid: 64028122e93825d40bd12d255a4eea45, type: 3}

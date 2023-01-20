@@ -59,6 +59,9 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadLevel()
     {
+        spawnpoints.Clear();
+        EnemySpawner.enemySpawner.enemySpawnpoints.Clear();
+        PlayerStats.Player.GetComponent<Health>().GiveHealth(1000);
         levelStart?.Invoke();
 
         SceneManager.LoadScene(Random.Range(2, SceneManager.sceneCountInBuildSettings));

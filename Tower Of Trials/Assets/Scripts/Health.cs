@@ -131,6 +131,12 @@ public class Health : MonoBehaviour
         // if you don't want damage & death sound to stack when dying you'll just
         // write else here :-)
     }
+    public void GiveHealth(int _health)
+    {
+        health += _health;
+        if (health > maxHealth)
+            health = maxHealth;
+    }
 
     private void DealDamageOverTime()
     {

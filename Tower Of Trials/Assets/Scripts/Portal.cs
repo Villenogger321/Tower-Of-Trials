@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.AnimatedValues;
 using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    Animator anim;
     bool isOpen;
     [SerializeField] bool startOpen;
     #region FMOD
@@ -16,8 +14,6 @@ public class Portal : MonoBehaviour
 
     void Awake()
     {
-        anim = GetComponent<Animator>();
-
         #region FMOD
 
         portalInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/env/Portal");
@@ -34,7 +30,8 @@ public class Portal : MonoBehaviour
     void OpenPortal()
     {
         portalInstance.start(); //FMOD sfx
-        anim.SetBool("OpenPortal", true);
+        //anim.SetBool("OpenPortal", true);
+        print("open protal");
         isOpen = true;
     }
 

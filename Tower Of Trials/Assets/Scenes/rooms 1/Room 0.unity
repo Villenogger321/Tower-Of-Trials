@@ -24632,7 +24632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230449592273945534, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
       propertyPath: movementSpeed
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e893b6421c27da84d92fe6dab7bb0fde, type: 3}
@@ -36907,6 +36907,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2052499132, guid: 01926a927f514254d961cca80a5f5b18, type: 3}
+      propertyPath: startOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8323040675111143853, guid: 01926a927f514254d961cca80a5f5b18, type: 3}
       propertyPath: m_Name
       value: Portal
@@ -40481,7 +40485,6 @@ MonoBehaviour:
   - {fileID: 569496803, guid: 34e5106a85bfbad4da23ffd588f74b48, type: 3}
   flaskVisual: {fileID: 243573358}
   flaskVisualBack: {fileID: 442444122}
-  currentHp: 100
 --- !u!114 &2126878302
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 8595897084813207590}
   - component: {fileID: 7211846813070115715}
   - component: {fileID: 5724734376204764780}
+  - component: {fileID: 1929553442}
+  - component: {fileID: 1929553443}
   m_Layer: 0
   m_Name: FloorGuardian
   m_TagString: Enemy
@@ -165,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562214a590792c941894f10cf5729c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 120
-  maxHealth: 120
+  health: 100
+  maxHealth: 100
 --- !u!114 &8595897084813207590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f48f3547d0e96642bdbe1b46fd96ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 25
 --- !u!114 &5724734376204764780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,3 +217,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnCost: 100
   killReward: 150
+--- !u!114 &1929553442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595897084813207615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff37b8bed1fa37543b9d365550b43ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1929553443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595897084813207615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0480278c074f5de4fb0fd2399e54cd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

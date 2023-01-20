@@ -10,11 +10,7 @@ public class FloorGuardian : MonoBehaviour
     }
     void FloorGuardianDead()
     {
+        print("dead floor guardian");
         EnemySpawner.enemySpawner.guardianKilled?.Invoke();
-    }
-
-    void Update()
-    {
-        
     }
 }

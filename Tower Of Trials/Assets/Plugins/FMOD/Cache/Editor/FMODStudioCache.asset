@@ -236,9 +236,9 @@ MonoBehaviour:
     Data3: 348971145
     Data4: 1112672596
   Banks:
+  - {fileID: 1577772290065956933}
   - {fileID: 6429058889363745777}
   - {fileID: -918181989945854148}
-  - {fileID: 1577772290065956933}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -424,13 +424,13 @@ MonoBehaviour:
     Data4: 235747686
   Banks:
   - {fileID: -918181989945854148}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 25201
+  Length: 10797
 --- !u!114 &-2541207373760840747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/sfx.bank
   Name: sfx
   StudioPath: bank:/sfx
-  lastModified: 638098129335385912
+  lastModified: 638098151362747836
   FileSizes: []
   Exists: 1
 --- !u!114 &-748493925135795874
@@ -645,7 +645,7 @@ MonoBehaviour:
   - {fileID: 6429058889363745777}
   StringsBanks:
   - {fileID: 7386310804097186947}
-  cacheTime: 638098129335385912
+  cacheTime: 638098151362747836
   cacheVersion: 131601
 --- !u!114 &519987665299093342
 MonoBehaviour:
