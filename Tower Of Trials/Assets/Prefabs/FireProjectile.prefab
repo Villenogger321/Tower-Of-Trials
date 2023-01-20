@@ -5194,3 +5194,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3672bd60cbc674fb9b5a94ed27ae0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particles: {fileID: 7646907958967355595, guid: 9da2061ded47a384f85ae3ffd79cbb4e, type: 3}
