@@ -23,6 +23,9 @@ public class SpawnItemOnDeath : MonoBehaviour
         ////////////////////////// crate breaking sfx
         crateBreakInstance.start();
 
-        // spawn item
+
+        print("test");
+        TrinketManager.Instance.SpawnTrinket(transform.position);
+        Destroy(gameObject);
     }
 }

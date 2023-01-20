@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnHit: []
-  WeaponInfo: {fileID: 11400000, guid: 5fc8baf144ea46642a34058a9e016d9a, type: 2}
+  WeaponInfo: {fileID: 11400000, guid: 789d1c176a3e7314da79625f862bd0df, type: 2}
   firePos: {fileID: 5230449591732327071}
   weaponHolder: {fileID: 5230449592260251793}
 --- !u!114 &5230449592273945532
